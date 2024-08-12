@@ -1,0 +1,3707 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Meliorate Health : Food Supplements</title>   
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" type="image/png" href="/asset/img/icon.png">
+</head>
+
+<body>
+  <div class="div-nav">
+    <div class="div-2-nav">
+      <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
+      <div class="div-3-nav">
+        <div class="div-4-nav"><a href="/index.html">Home</a></div>
+        <div class="div-5-nav"><a href="/index.html#about-us">About Us</a></div>
+        <div class="div-6-nav">
+          <div class="div-7-nav"><a href="/product.html">Products</a></div>
+         
+        </div>
+        <div class="div-8-nav"><a href="/career.html">Career</a></div>
+      </div>
+      <div class="div-9-nav"><a href="/index.html#contact-us">Contact</a></div>
+    </div>
+  </div>
+
+  <style>
+    .container-main {
+      display: flex;
+      width: 100%;
+      height: 950px;
+    }
+
+    .image-container-main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* This aligns the content to the center */
+    }
+
+    .image-main {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .image-logo-main {
+      position: absolute;
+      /* Allow absolute positioning */
+      top: 50%;
+      /* Center vertically */
+      left: 55%;
+      /* Center horizontally */
+      transform: translate(-50%, -50%);
+      /* Offset by 50% of its own size */
+      padding: 10px;
+    }
+  </style>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .div-nav {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    padding: 15px 60px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  @media (max-width: 991px) {
+    .div-nav {
+      padding: 0 20px;
+    }
+  }
+
+  .div-2-nav {
+    align-items: center;
+    display: flex;
+    width: 100%;
+    max-width: 1610px;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (max-width: 991px) {
+    .div-2-nav {
+      max-width: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+
+  .img-nav {
+    aspect-ratio: 2.5;
+    object-fit: auto;
+    object-position: center;
+    width: 208px;
+    align-self: stretch;
+    max-width: 100%;
+    cursor: pointer;
+  }
+
+  .div-3-nav {
+    align-self: stretch;
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+    justify-content: space-between;
+    margin: auto 0;
+    align-items: center;
+  }
+
+  @media (max-width: 991px) {
+    .div-3-nav {
+      max-width: 100%;
+      flex-wrap: wrap;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+    .div-4-nav{
+      margin-left: 50px;
+    }
+  }
+
+  .div-4-nav,
+  .div-5-nav,
+  .div-7-nav,
+  .div-8-nav {
+    font-family: Poppins, sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .div-5-nav,
+  .div-6-nav,
+  .div-8-nav {
+    margin-left: 50px;
+  }
+
+  .div-4-nav a,
+  .div-5-nav a,
+  .div-7-nav a,
+  .div-8-nav a,
+  .submenu-item a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .div-9-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .div-6-nav {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+    padding: 7px 0;
+    position: relative;
+  }
+
+  .img-2-nav {
+    object-fit: auto;
+    object-position: center;
+    width: 9px;
+    margin: auto 0;
+    cursor: pointer;
+  }
+
+  .div-9-nav {
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #ec3237;
+    align-self: stretch;
+    color: #fff;
+    margin: auto 0;
+    padding: 13px 22px;
+    font: 500 22px Poppins, sans-serif;
+    cursor: pointer;
+  }
+
+  @media (max-width: 991px) {
+    .div-9-nav {
+      padding: 20px;
+    }
+  }
+
+  /* Submenu styles */
+  .submenu-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    min-width: 150px;
+    /* Ensures the submenu has enough width */
+  }
+
+  .submenu-item {
+    padding: 10px 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+  }
+
+  .submenu-item:hover {
+    background-color: #f1f1f1;
+  }
+
+  .div-6-nav:hover .submenu-nav {
+    display: block;
+  }
+</style>
+
+
+
+  <div class="div">
+ 
+    <div class="div-11">
+      <img loading="lazy"
+      src="/asset/img/product-list-status-bg.png"  
+      class="img-3" />
+      <div class="div-12">
+        <div class="div-13">Home</div>
+        <img loading="lazy"
+        src="/asset/img/double_right_forward.svg" 
+        class="img-4" />
+        <div class="div-14">Product List</div>
+        <img loading="lazy"
+        src="/asset/img/double_right_forward.svg"  
+        class="img-5" />
+        <div class="div-15">Food Supplements</div>
+      </div>
+    </div>
+    <div class="div-17">
+      <div class="div-18">
+        <div class="div-19">Food Supplements</div>
+        <div style="width: 83%;" class="div-20">
+          <div class="div-21">
+            <div class="div-22">
+              <img loading="lazy"
+              src="/asset/img/search.svg" 
+              class="img-7" />
+              <div class="div-23">
+              </div>
+              <input class="search-input" type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for medicines..">
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+
+  
+  
+    <style>
+      .search-input{
+        outline: none; 
+        border: none;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1em;
+        font-family: Arial, sans-serif;
+      }
+    
+      table,
+      th,
+      td {
+        border: 1px dashed #3E4095;
+      }
+    
+      th,
+      td {
+        padding: 25px;
+        text-align: left;
+      }
+    
+      th {
+        background-color: #F2F3FF;
+      }
+    
+      tr:nth-child(even) {
+        background-color: #F2F3FF;
+      }
+    
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+    
+      .category {
+        text-align: center;
+        font-weight: bold;
+        background-color: #F2F3FF;
+      }
+    
+      /* Hover Blur Effect */
+      .blur-hover {
+        position: relative;
+      }
+    
+      .blur-hover:hover .text-blur {
+        filter: blur(5px);
+        transition: filter 0.3s;
+      }
+    
+      .blur-hover:hover .hover-text {
+        opacity: 1;
+      }
+    
+      .text-blur {
+        transition: filter 0.3s;
+      }
+    
+      .hover-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+        border: 1px solid #3E4095;
+      }
+    </style>
+
+    
+    <table id="medTable" border="0" cellpadding="0" cellspacing="0" style="width:83%; display:flexbox; ">
+      <tbody>
+        <tr class="blur-hover" style="background-color: #cccefecd;">
+          <td class="class=text-blur" style="height:40px; width:75px">S.NO.</td>
+          <td style="width:379px">GENERIC NAME</td>
+          <td style="width:227px">STRENGTH</td>
+          <td style="width:221px">Dosage - PACK</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-BACTERIALS</strong>
+          </td>
+        </tr>
+        <tr class="blur-hover">
+          <td class="text-blur" style="height:40px; width:75px">1</td>
+          <td class="text-blur" style="width:379px">Ciprofloxacin Tablets USP</td>
+          <td class="text-blur" style="width:227px">250 mg &amp; 500 mg</td>
+          <td class="text-blur" style="width:221px">10's Tablets - Blister</td>
+          <div class="hover-text">Additional info about Ciprofloxacin</div>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">2</td>
+          <td style="width:379px">Levofloxacin Tablets</td>
+          <td style="width:227px">250 mg, 500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">3</td>
+          <td style="width:379px">Norfloxacin Tablets</td>
+          <td style="width:227px">400 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">4</td>
+          <td style="width:379px">Ofloxacin Tablets</td>
+          <td style="width:227px">200 mg, 400 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:50px; width:75px">5</td>
+          <td style="width:379px">Linezolid Tablets / Linezolid for Oral Suspension</td>
+          <td style="width:227px">600 mg, 100mg / 5 ml</td>
+          <td style="width:221px">4's Tablets Strip 30 ml -Dry Sy.- bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">6</td>
+          <td style="width:379px">Chloramphenicol Oral Suspension</td>
+          <td style="width:227px">125 mg/5ml</td>
+          <td style="width:221px">60 ml Suspn. - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">7</td>
+          <td style="width:379px">Azithromycin Tablets</td>
+          <td style="width:227px">250 mg, 500mg</td>
+          <td style="width:221px">6's Tablets Strip</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">8</td>
+          <td style="width:379px">Erythromycin Stearate Tablets / Erythromycin Estolate Suspension</td>
+          <td style="width:227px">250 mg.,500 mg &amp; 125 mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:73px; width:75px">9</td>
+          <td style="width:379px">Cotrimoxazole Tablets / Suspension</td>
+          <td style="width:227px">(400+80mg) , (800+160mg) &amp; (40+200mg/5ml)</td>
+          <td style="width:221px">10 Tabs- Blister 10 Tabs- Blister 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-DIARRHOEALS /
+              ANTI-INFECTIVES</strong></td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">10</td>
+          <td style="width:379px">Ciprofloxacin &amp; Tinidazole Tablets / Suspension</td>
+          <td style="width:227px">500 + 600 mg &amp; (125 mg+ 100 mg/ 5ml)</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 30 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">11</td>
+          <td style="width:379px">Ofloxacin &amp; Tinidazole Tablets</td>
+          <td style="width:227px">200+600 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">12</td>
+          <td style="width:379px">Ofloxacin &amp; Ornidazole Tablets</td>
+          <td style="width:227px">200+500mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">13</td>
+          <td style="width:379px">Ofloxacin &amp; Ornidazole suspension</td>
+          <td style="width:227px">50 mg + 125 mg</td>
+          <td style="width:221px">30ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:52px; width:75px">14</td>
+          <td style="width:379px">Metronidazole Tablets / Metronidazole Benzoate oral Suspension</td>
+          <td style="width:227px">200, 250 mg &amp; 125mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-FUNGALS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">15</td>
+          <td style="width:379px">Fluconazole tablets</td>
+          <td style="width:227px">150mg.</td>
+          <td style="width:221px">1's Tablet Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">16</td>
+          <td style="width:379px">Griseofulvin Tablets B.P.</td>
+          <td style="width:227px">500mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANALGESICS ,
+              ANTIPYRETICS &amp; ANTI-INFLAMMATORY</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">17</td>
+          <td style="width:379px">Diclofenac Tablets BP</td>
+          <td style="width:227px">50mg, 100 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">18</td>
+          <td style="width:379px">Diclofenac and Paracetamol Tablets</td>
+          <td style="width:227px">50 +500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">19</td>
+          <td style="width:379px">Aceclofenac and Paracetamol Tablets</td>
+          <td style="width:227px">100 +500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:49px; width:75px">20</td>
+          <td style="width:379px">Ibuprofen &amp; Paracetamol Tablets / Suspension</td>
+          <td style="width:227px">(400+500 mg), 100+125mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:50px; width:75px">21</td>
+          <td style="width:379px">Ibuprofen Tablets / Suspension</td>
+          <td style="width:227px">200 mg, 400 mg, 100mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">22</td>
+          <td style="width:379px">Paracetamol Tablets /Suspension</td>
+          <td style="width:227px">500 mg, 125 mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:53px; width:75px">23</td>
+          <td style="width:379px">Diclofenac Pottassium &amp; Paracetamol, Trypsin &amp; Chymotrypsin Tablets</td>
+          <td style="width:227px">50mg+325mg+50000AU</td>
+          <td style="width:221px">10's Alu-Alu Strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>EXPECTORANTS,
+              ANTITUSSIVES, MUCOLYTICS &amp; DECONGESTANT</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">24</td>
+          <td style="width:379px">Bromexine HCl Syrup</td>
+          <td style="width:227px">4mg/5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">25</td>
+          <td style="width:379px">Salbutamol Solution</td>
+          <td style="width:227px">2mg/5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">26</td>
+          <td style="width:379px">Salbutamol, Bromhexine &amp; Phenylephrine Syrup</td>
+          <td style="width:227px">4+8+5 mg/10ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">27</td>
+          <td style="width:379px">Dextromethorphan, Chlorpheniramine, Guaiphenesin &amp; Ammonium Chloride Syrup</td>
+          <td style="width:227px">( 5 + 2 + 50+75 mg) /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">28</td>
+          <td style="width:379px">Ambroxol, Terbutaline, Guaiphenesin &amp; Menthol Syrup</td>
+          <td style="width:227px">( 15 + 1.25 + 50 + 2.5 mg) /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">29</td>
+          <td style="width:379px">Levosalbutamol, Ambroxol &amp; Guaifenesin Syrup</td>
+          <td style="width:227px">0.5 + 15 + 50 mg</td>
+          <td style="width:221px">60 ml</td>
+        </tr>
+        <tr>
+          <td style="height:53px; width:75px">30</td>
+          <td style="width:379px">Diphenhydramine, Ammonium Chloride, Sodium citrate &amp; Menthol Syrup</td>
+          <td style="width:227px">(14.08 +138 + 57.03+1.14 mg) / 5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">31</td>
+          <td style="width:379px">CODEINE Phoshate, C.P. maleate syrup</td>
+          <td style="width:227px">10 + 4 mg /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:74px; width:75px">32</td>
+          <td style="width:379px">Chlorpenamine, Phenylephrine, Paracetamol, Sodium Citrate &amp; Menthol Syrup</td>
+          <td style="width:227px">1mg+5mg+125mg+60mg+1mg</td>
+          <td style="width:221px">60 ml</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">33</td>
+          <td style="width:379px">Terbutaline &amp; Bromhexine Syrup</td>
+          <td style="width:227px">2.5mg+8 mg.</td>
+          <td style="width:221px">100 ml</td>
+        </tr>
+        <tr>
+          <td style="height:51px; width:75px">34</td>
+          <td style="width:379px">CP Maleate, Phenylephrine, Paracetamol &amp; Caffeine Tablets</td>
+          <td style="width:227px">(2mg + 5 mg+ 500 mg + 30 mg)</td>
+          <td style="width:221px">4's Tablets Strip / Catch Cover</td>
+        </tr>
+        <tr>
+          <td style="height:80px; width:75px"></td>
+          <td style="width:379px">Paracetamol, Sodium Citrate, Phenylephrine, Chlorphenamine &amp; Levomenthol</td>
+          <td style="width:227px">125+60 + 1+5+1</td>
+          <td style="width:221px">120 ml</td>
+        </tr>
+        <tr>
+          <td style="height:55px; width:75px">35</td>
+          <td style="width:379px">Cyproheptadine &amp; Tricholine citrate Syrup</td>
+          <td style="width:227px">( 2 mg + 275 mg ) / 5ml</td>
+          <td style="width:221px">200 ml - Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-ALLERGICS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">36</td>
+          <td style="width:379px">Cetirizine Tablets</td>
+          <td style="width:227px">10 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">37</td>
+          <td style="width:379px">Promethazine Tablets / Syrup</td>
+          <td style="width:227px">25 mg, &amp; 5mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Syrup -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-MALARIALS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:84px; width:75px">38</td>
+          <td style="width:379px">Artemether + Lumefantrin Tablets / Dry Syrup</td>
+          <td style="width:227px">80 mg + 480 mg 20 mg + 120 mg 180 mg+1080 mg /60ml</td>
+          <td style="width:221px">Tablets Tablets Dry syrup</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">39</td>
+          <td style="width:379px">Sulfadoxine and Pyrimethamine Tablets / Suspension</td>
+          <td style="width:227px">500+25 mg. &amp; 250 + 12.5 mg/5ml,</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 10 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">40</td>
+          <td style="width:379px">Artesunate Tablets</td>
+          <td style="width:227px">50 mg / 100 mg</td>
+          <td style="width:221px">6's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">41</td>
+          <td style="width:379px">Tablets Artesunate + Tablets Amodiaquine</td>
+          <td style="width:227px">100 mg + 306.2 mg</td>
+          <td style="width:221px">(3+3) Combipack: 6's Blister</td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">42</td>
+          <td style="width:379px">Amodiaquine Tablets /Suspension</td>
+          <td style="width:227px">200mg, 50 mg/5ml</td>
+          <td style="width:221px">3 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>HYPERACIDITY, ULCERS
+              &amp; ANTACIDS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:76px; width:75px">43</td>
+          <td style="width:379px">Dried Aluminium Hydroxide +Magnesium Hydroxide+Dimeticone - Tablets / Suspension</td>
+          <td style="width:227px">250+250+50 mg, 830+185+50mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 150 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">44</td>
+          <td style="width:379px">Omeprazole &amp; Domperidone Capsules</td>
+          <td style="width:227px">20 mg + 10 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">45</td>
+          <td style="width:379px">Omeprazole Capsules</td>
+          <td style="width:227px">20 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">46</td>
+          <td style="width:379px">Pantoprazole &amp; Domperidone Tablets</td>
+          <td style="width:227px">20 mg+ 10 mg</td>
+          <td style="width:221px">10's strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">47</td>
+          <td style="width:379px">Pantoprazole Tablets</td>
+          <td style="width:227px">40 mg</td>
+          <td style="width:221px">10's strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; width:901px">ENZYMES, DIGESTIVE SUPPLEMENTS</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">48</td>
+          <td style="width:379px">Fungal Diastase &amp; Pepsin Capsules / Syrup</td>
+          <td style="width:227px">50 + 20 mg , 50 mg + 10 mg / 5 ml</td>
+          <td style="width:221px">15 Capsules - strip 200 ml. - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:52px; width:75px">49</td>
+          <td style="width:379px">Fungal Diastase(1:2000) with Carminatives Syrup</td>
+          <td style="width:227px"></td>
+          <td style="width:221px">200ml</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>LAXATIVES</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">50</td>
+          <td style="width:379px">Bisacodyl Tablets BP</td>
+          <td style="width:227px">5 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTHELMINTICS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">51</td>
+          <td style="width:379px">Albendazole Tablets / Oral Suspension</td>
+          <td style="width:227px">200 mg, 400 mg &amp; 200mg/5ml ,</td>
+          <td style="width:221px">2's &amp; 1's Tablet - Blister 10ml suspn. Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">52</td>
+          <td style="width:379px">Mebendazole Tablets / Oral Suspension</td>
+          <td style="width:227px">100 mg &amp; 100mg/5ml</td>
+          <td style="width:221px">6 Tabs- Blister &amp; 30 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>VITAMINS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">53</td>
+          <td style="width:379px">Calcium and Vitamin D3 Tablets</td>
+          <td style="width:227px">500 + 250 IU</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">54</td>
+          <td style="width:379px">Cheawable Vitamin C tablets</td>
+          <td style="width:227px">500 mg</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">55</td>
+          <td style="width:379px">Cheawable Vitamin C + Folic Acid Tablets</td>
+          <td style="width:227px">500 mg + 5 mg</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">55</td>
+          <td style="width:379px">Folic Acid Tablets</td>
+          <td style="width:227px">5mg</td>
+          <td style="width:221px">10 tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">56</td>
+          <td style="width:379px">Vitamin B-Complex and Vitamin C Syrup</td>
+          <td style="width:227px">B- Complex with Vit. C</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">57</td>
+          <td style="width:379px">Vitamin B-Complex and Vitamin C with Zinc Capsules</td>
+          <td style="width:227px">Vitamin B-Complex and Vitamin C with Zinc</td>
+          <td style="width:221px">10 Capsules - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:64px; width:75px">58</td>
+          <td style="width:379px">Multivitamin Tablets / Syrup</td>
+          <td style="width:227px">Multivitamins</td>
+          <td style="width:221px">10's Blister 100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>HAEMATINIC /
+              ANTI-OXIDANTS WITH VITAMINS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:78px; width:75px">59</td>
+          <td style="width:379px">Iron(III) Hydroxide Polymaltose Complex &amp; Folic Capsules/Iron(III) Hyd.
+            Polymaltose Complex Syrup</td>
+          <td style="width:227px">100 mg + 500 mcg Iron 100 mg / 5 ml</td>
+          <td style="width:221px">10's caps -' Blister &amp; 30's Caps - Bottle 200 ml Syrup</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">60</td>
+          <td style="width:379px">Ferrous Ascorbate, Folic &amp; Zinc ( as Zinc Sulfate) Tablets</td>
+          <td style="width:227px">(iron 100 mg + Folic 1500 mcg + Zn 22.5 mg )</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:55px; width:75px">61</td>
+          <td style="width:379px">Ferrous Ascorbate and Folic Acid Suspension</td>
+          <td style="width:227px">Syr : per 5ml. (iron 100 g + 500 mcg Folic )</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:70px; width:75px">62</td>
+          <td style="width:379px">Feric Amonium Citrate, Cynocobalamin, Pyridoxine, Niacinamide, Zinc Sulphate Syrup
+          </td>
+          <td style="width:227px">225 mg+7.5 mcg+1.5mg+50 mg+44.4 mg</td>
+          <td style="width:221px">200ml Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">63</td>
+          <td style="width:379px">Ferrous Fumarate, Vitamin B12, Folic Acid, Vitamin B6, Docusate Sodium Capsules</td>
+          <td style="width:227px">300mg + 10 mcg+ 1mg + 1.5 mg + 50 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!justify"><strong>IMPOTENCE DRUG</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">64</td>
+          <td style="width:379px">Sildenafil Citrate Tablets</td>
+          <td style="width:227px">50 mg &amp; 100 mg.</td>
+          <td style="width:221px">2's &amp; 4's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px"></td>
+          <td colspan="3">NEUTRACEUTICALS</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">65</td>
+          <td style="width:379px">Zinc Picolinate + Selenium Tablets</td>
+          <td style="width:227px">50 mg + 20 ug</td>
+          <td style="width:221px">10' s Blister 120's -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTIBIOTICS -
+              (Cepholosprins )</strong></td>
+        </tr>
+        <tr>
+          <td style="height:80px; width:75px">66</td>
+          <td style="width:379px">CepfodoximeTablets</td>
+          <td style="width:227px">Cepfodoxime proxetile eq. to Cepfodoxime :100 mg. &amp;200 mg.</td>
+          <td style="width:221px">6's Tablets Strip</td>
+        </tr>
+        <tr>
+          <td style="height:65px; width:75px">67</td>
+          <td style="width:379px">Cepfodoxime Dry syrup</td>
+          <td style="width:227px">Cepfodoxime proxetile eq. to Cepfodoxime : 50 mg.</td>
+          <td style="width:221px">30ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">68</td>
+          <td style="width:379px">Cefuroxime Axetil Dry Syrup</td>
+          <td style="width:227px">125mg/5ml</td>
+          <td style="width:221px">100ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:82px; width:75px">69</td>
+          <td style="width:379px">Cefixime Tablets / Suspension USP</td>
+          <td style="width:227px">100 mg &amp; 200 mg,50 mg / 5ml</td>
+          <td style="width:221px">10' &amp; 6' tablets - Strip 30ml -Dry Sy. -Bottle &amp; 100 ml Dry Sy.- Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:48px; width:75px">70</td>
+          <td style="width:379px">Cefixime + Azithromycin Tablets / Dispersible Tablets</td>
+          <td style="width:227px">200 mg + 250 mg 100mg + 125mg</td>
+          <td style="width:221px">10' s AlU-ALU - Strip 10' s AlU-ALU - Strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>(POWDER )
+              INJECTIONS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">71</td>
+          <td style="width:379px">Ceftriaxone for Injection U.S.P.</td>
+          <td style="width:227px">125 / 250 / 500 mg / 1g.</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">72</td>
+          <td style="width:379px">Cefotaxime for Injection U.S.P.</td>
+          <td style="width:227px">125/250/500/1000 mg,</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">73</td>
+          <td style="width:379px">Cefazolin for Injection U.S.P.</td>
+          <td style="width:227px">500mg, 1 g / 2 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">74</td>
+          <td style="width:379px">Ceftazidine for Injection U.S.P.</td>
+          <td style="width:227px">125/250/1000 mg</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">75</td>
+          <td style="width:379px">Cefepime for Injection U.S.P.</td>
+          <td style="width:227px">500mg, 1 g / 2 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">76</td>
+          <td style="width:379px">Cefoperazone for Injection U.S.P.</td>
+          <td style="width:227px">500 mg, 1 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <script>
+      function searchTable() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById('medTable');
+        const trs = table.getElementsByTagName('tr');
+        
+        for (let i = 1; i < trs.length; i++) {
+          const tds = trs[i].getElementsByTagName('td');
+          let display = 'none';
+          for (let j = 0; j < tds.length; j++) {
+            if (tds[j] && tds[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+              display = '';
+              break;
+            }
+          }
+          trs[i].style.display = display;
+        }
+      }
+    </script>
+
+
+    
+<div class="div-79-footer">
+  <div class="div-80-footer">
+    <div class="div-81-footer">
+      <img loading="lazy"
+      src="/asset/img/footer_logo.png"  
+      class="img-17-footer" />
+      <div class="div-82-footer">
+        Meliorate Health is one top solution for all our global partners with
+        an array of
+        <br />
+        Pharmaceuticals, nutraceuticals & Cosmeceuticals.
+      </div>
+      <div class="div-83-footer">
+        <a  href="https://www.linkedin.com/company/meliorate-health-pvt-ltd/about/" target="_blank">
+          <img loading="lazy"
+          src="/asset/img/linkedin.svg"  
+          class="img-18-footer" /></a>
+        <img loading="lazy"
+        src="/asset/img/youtube.svg"  
+        class="img-19-footer" />
+        <img loading="lazy"
+        src="/asset/img/twitter.svg" 
+        class="img-20-footer" />
+        <img loading="lazy"
+        src="/asset/img/instagram.svg"  
+        class="img-21-footer" />
+        <img loading="lazy"
+        src="/asset/img/facebook.svg"  
+        class="img-22-footer" />
+      </div>
+    </div>
+    <div class="div-84-footer">
+      <div class="div-85-footer">Quick Links</div>
+      <div class="div-86-footer"><a style="text-decoration: none; color: white;" href="/index.html">• Home</a></div>
+      <div class="div-87-footer"><a style="text-decoration: none; color: white;" style="text-decoration: none; color: white;" href="/index.html#about-us">• About Us</a></div>
+      <div class="div-88-footer"><a style="text-decoration: none; color: white;" href="/product.html">• Product</a></div>
+      <div class="div-89-footer"><a style="text-decoration: none; color: white;" href="/index.html#contact-us">• Contact Us</a></div>
+      <div class="div-90-footer"><a style="text-decoration: none; color: white;" href="/career.html">• Career</a></div>
+    </div>
+ 
+    <div class="div-98-footer">
+      <div class="div-99-footer">Contact Details</div>
+      <div class="div-100-footer">
+        <img loading="lazy"
+        src="/asset/img/whit_phone.svg"  
+        class="img-23-footer" />
+        <div class="div-101-footer">+91 9967840625</div>
+      </div>
+      <div class="div-102-footer">
+        <img loading="lazy"
+        src="/asset/img/white_telephone.svg" 
+        class="img-24-footer" />
+        <div class="div-103-footer">+91 22-40105044</div>
+      </div>
+      <div class="div-104-footer">
+        <img loading="lazy"
+        src="/asset/img/white_mail.svg" 
+        class="img-25-footer" />
+        <div class="div-105-footer">
+          <div class="div-106-footer">hr@melioratehealth.com</div>
+          <div class="div-107-footer">info@melioratehealth.com</div>
+        </div>
+      </div>
+      <div class="div-108-footer">
+        <img loading="lazy"
+        src="/asset/img/location.svg"  
+        class="img-26-footer" />
+        <div class="div-109-footer">
+          810/811, Master Mind V, Royal Palms Estate, Aarey Milk Colony,
+          Goregaon (East), Mumbai – 400065, India
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="div-110-footer">
+  <div class="div-111-footer">
+    <div class="div-112-footer">
+      Copyright 2015 Meliorate Health OPC Pvt. Ltd. All Rights Reserved.
+    </div>
+  </div>
+</div>
+
+<style>
+
+ 
+ .div-79-footer {
+      background-color: #484a9a;
+      display: flex;
+      margin-top: 200px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 60px 46px;
+    }
+
+    @media (max-width: 991px) {
+      .div-79-footer {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+
+    .div-80-footer {
+      display: flex;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 1600px;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-80-footer {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-81-footer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .img-17-footer {
+      aspect-ratio: 2.78;
+      object-fit: auto;
+      object-position: center;
+      width: 215px;
+      max-width: 100%;
+    }
+
+    .div-82-footer {
+      color: #fff;
+      margin-top: 30px;
+      font: 400 14px Poppins, sans-serif;
+    }
+
+    .div-83-footer {
+      align-items: start;
+      display: flex;
+      margin-top: 30px;
+      padding-right: 80px;
+      gap: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .div-83-footer {
+        padding-right: 20px;
+      }
+    }
+
+    .img-18-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+    }
+
+    .img-19-footer {
+      aspect-ratio: 1.41;
+      object-fit: auto;
+      object-position: center;
+      width: 24px;
+      fill: #fff;
+    }
+
+    .img-20-footer {
+      aspect-ratio: 1.2;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .img-21-footer {
+      aspect-ratio: 0.94;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      align-self: stretch;
+    }
+
+    .img-22-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+    }
+
+    .div-84-footer {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 400;
+      line-height: 150%;
+      padding: 3px 0;
+      width: 280px;
+      margin-left: 80px;
+    }
+
+    .div-85-footer {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-86-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 47px;
+    }
+
+    @media (max-width: 991px) {
+      .div-86-footer {
+        margin-top: 40px;
+      }
+    }
+
+    .div-87-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-88-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-89-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-90-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-91-footer {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      width: 580px;
+      margin-left: 80px;
+    }
+
+    .div-92-footer {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-93-footer {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      margin-top: 40px;
+      font: 700 18px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-93-footer {
+        margin-right: 9px;
+      }
+    }
+
+    .div-94-footer {
+      margin-top: 30px;
+      font: 400 16px/24px Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-94-footer {
+        margin-right: 9px;
+      }
+    }
+
+    .div-95-footer {
+      border-radius: 9999px;
+      border-color: rgba(255, 255, 255, 1);
+      border-style: solid;
+      border-width: 1px;
+      background-color: #484a9a;
+      display: flex;
+      margin-top: 41px;
+      gap: 20px;
+      justify-content: space-between;
+      padding: 10px 10px 10px 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-95-footer {
+        margin-top: 40px;
+      }
+    }
+
+    .div-96-footer {
+      margin: auto 0;
+      font: 300 14px Roboto, sans-serif;
+    }
+
+    .div-97-footer {
+      justify-content: center;
+      border-radius: 999px;
+      background-color: #ec3237;
+      white-space: nowrap;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      font: 500 18px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-97-footer {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+
+    .div-98-footer {
+      align-items: start;
+      align-self: stretch;
+      display: flex;
+      padding-bottom: 6px;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 205.5%;
+      margin-left: 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-98-footer {
+        max-width: 100%;
+      }
+    }
+
+    .div-99-footer {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      align-self: stretch;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-99-footer {
+        max-width: 100%;
+      }
+    }
+
+    .div-100-footer {
+      display: flex;
+      margin-top: 42px;
+      gap: 10px;
+    }
+
+    @media (max-width: 991px) {
+      .div-100-footer {
+        margin-top: 40px;
+      }
+    }
+
+    .img-23-footer-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-101-footer {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-102-footer {
+      display: flex;
+      margin-top: 26px;
+      gap: 10px;
+    }
+
+    .img-24-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-103-footer {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-104-footer {
+      display: flex;
+      margin-top: 34px;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 991px) {
+      .div-104-footer {
+        white-space: initial;
+      }
+    }
+
+    .img-25-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+      margin: auto 0;
+    }
+
+    .div-105-footer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+      .div-105-footer {
+        white-space: initial;
+      }
+    }
+
+    .div-106-footer {
+      font-family: Poppins, sans-serif;
+    }
+
+    .div-107-footer {
+      font-family: Poppins, sans-serif;
+      margin-top: 17px;
+    }
+
+    .div-108-footer {
+      align-self: stretch;
+      display: flex;
+      margin-top: 37px;
+      gap: 10px;
+      line-height: 33px;
+    }
+
+    @media (max-width: 991px) {
+      .div-108-footer {
+        flex-wrap: wrap;
+      }
+    }
+
+    .img-26-footer {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+      margin: auto 0;
+    }
+
+    .div-109-footer {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    @media (max-width: 991px) {
+      .div-109-footer {
+        max-width: 100%;
+      }
+    }
+
+    .div-110-footer {
+      background-color: #ec3237;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 33px;
+      justify-content: center;
+      padding: 30px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-110-footer {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .div-111-footer {
+      display: flex;
+      width: 100%;
+      max-width: 1601px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+ </style>
+
+
+  </div>
+  <style>
+    .div {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .div-2 {
+      align-items: center;
+      background-color: #fff;
+      align-self: stretch;
+      display: flex;
+      width: 100%;
+      text-transform: uppercase;
+      justify-content: center;
+      padding: 15px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-2 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .div-3 {
+      align-items: center;
+      display: flex;
+      width: 100%;
+      max-width: 1618px;
+      padding-right: 8px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-3 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .img {
+      aspect-ratio: 2.5;
+      object-fit: auto;
+      object-position: center;
+      width: 208px;
+      align-self: stretch;
+      max-width: 100%;
+    }
+
+    .div-4 {
+      align-self: stretch;
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      color: #000;
+      font-weight: 400;
+      justify-content: space-between;
+      margin: auto 0;
+      align-items: center;
+    }
+
+    @media (max-width: 991px) {
+      .div-4 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-5 {
+      font-family: Poppins, sans-serif;
+    }
+
+    .div-6 {
+      font-family: Poppins, sans-serif;
+    }
+
+    .div-7 {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+      padding: 7px 0;
+    }
+
+    @media (max-width: 991px) {
+      .div-7 {
+        white-space: initial;
+      }
+    }
+
+    .div-8 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+    }
+
+    .img-2 {
+      aspect-ratio: 1.79;
+      object-fit: auto;
+      object-position: center;
+      width: 9px;
+      stroke-width: 1px;
+      stroke: #000;
+      border-color: rgba(0, 0, 0, 1);
+      border-style: solid;
+      border-width: 1px;
+      margin: auto 0;
+    }
+
+    .div-9 {
+      font-family: Poppins, sans-serif;
+    }
+
+    .div-10 {
+      justify-content: center;
+      border-radius: 10px;
+      background-color: #ec3237;
+      align-self: stretch;
+      color: #fff;
+      margin: auto 0;
+      padding: 13px 22px;
+      font: 500 22px Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-10 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-11 {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      align-self: stretch;
+      position: relative;
+      min-height: 338px;
+      width: 100%;
+      align-items: center;
+      font-size: 20px;
+      color: #fff;
+      font-weight: 500;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-11 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .img-3 {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .div-12 {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      margin: 76px 0 44px;
+    }
+
+    @media (max-width: 991px) {
+      .div-12 {
+        flex-wrap: wrap;
+        margin: 40px 0;
+      }
+    }
+
+    .div-13 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .img-4 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 27px;
+    }
+
+    .div-14 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .img-5 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 27px;
+    }
+
+    .div-15 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .img-6 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 27px;
+    }
+
+    .div-16 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-17 {
+      border-radius: 30px 30px 0px 0px;
+      background-color: #3e4095;
+      display: flex;
+      margin-top: 200px;
+      width: 1600px;
+      max-width: 83%;
+      flex-direction: column;
+      justify-content: center;
+      padding: 33px 37px;
+    }
+
+    @media (max-width: 991px) {
+      .div-17 {
+        margin-top: 40px;
+        padding: 20px;
+      }
+    }
+
+    .div-18 {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-18 {
+        max-width: 100%;
+        margin-right: 4px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-19 {
+      color: #fff;
+      text-transform: capitalize;
+      margin: auto 0;
+      font: 500 32px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-19 {
+        max-width: 100%;
+      }
+    }
+
+    .div-20 {
+      display: flex;
+      flex-direction: column;
+      font-size: 18px;
+      color: #000;
+      font-weight: 300;
+      white-space: nowrap;
+      justify-content: center;
+    }
+
+    @media (max-width: 991px) {
+      .div-20 {
+        max-width: 100%;
+        white-space: initial;
+      }
+    }
+
+    .div-21 {
+      border-radius: 20px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-21 {
+        max-width: 100%;
+        white-space: initial;
+        padding: 20px;
+      }
+    }
+
+    .div-22 {
+      display: flex;
+      gap: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .div-22 {
+        white-space: initial;
+      }
+    }
+
+    .img-7 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 24px;
+      border-width: 2px;
+    }
+
+    .div-23 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-24 {
+      z-index: 10;
+      display: flex;
+      width: 100%;
+      max-width: 1600px;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 700;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-24 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-25 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      white-space: nowrap;
+      justify-content: center;
+      padding: 84px 20px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-25 {
+        white-space: initial;
+      }
+    }
+
+    .div-26 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      justify-content: center;
+      padding: 71px 21px;
+    }
+
+    @media (max-width: 991px) {
+      .div-26 {
+        padding-left: 20px;
+      }
+    }
+
+    .div-27 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 60px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-27 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-28 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .div-29 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-29 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-30 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      align-items: start;
+      justify-content: center;
+      padding: 39px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-30 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-31 {
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      z-index: 10;
+      justify-content: center;
+      padding: 80px 74px 80px 60px;
+      font: 20px Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-31 {
+        padding: 0 30px 0 29px;
+      }
+    }
+
+    .div-32 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #e5e6ff;
+      justify-content: center;
+      padding: 80px 46px;
+    }
+
+    @media (max-width: 991px) {
+      .div-32 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-33 {
+      display: flex;
+      width: 100%;
+      max-width: 1600px;
+      gap: 0px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-33 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-34 {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-35 {
+      display: flex;
+      gap: 0px;
+    }
+
+    .div-36 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 85px 56px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-36 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-37 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      justify-content: center;
+      padding: 80px 36px;
+    }
+
+    @media (max-width: 991px) {
+      .div-37 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-38 {
+      display: flex;
+      gap: 0px;
+    }
+
+    .div-39 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 85px 56px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-39 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-40 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      justify-content: center;
+      padding: 80px 36px;
+
+    }
+
+    @media (max-width: 991px) {
+      .div-40 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-41 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+      .div-41 {
+        max-width: 100%;
+      }
+    }
+
+    .div-42 {
+      display: flex;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-42 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-43 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: start;
+      justify-content: center;
+      padding: 38px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-43 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-44 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-44 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-45 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-45 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-46 {}
+
+    @media (max-width: 991px) {
+      .div-46 {
+        max-width: 100%;
+      }
+    }
+
+    .div-47 {
+      gap: 20px;
+      display: flex;
+    }
+
+    @media (max-width: 991px) {
+      .div-47 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 38%;
+      margin-left: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .column {
+        width: 100%;
+      }
+    }
+
+    .div-48 {
+      z-index: 10;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-49 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-49 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-50 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 38px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-50 {
+        padding: 0 20px;
+      }
+    }
+
+    .column-2 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 62%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-2 {
+        width: 100%;
+      }
+    }
+
+    .div-51 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-51 {
+        max-width: 100%;
+      }
+    }
+
+    .div-52 {
+      display: flex;
+      gap: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .div-52 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-53 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-53 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-54 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-54 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-55 {
+      z-index: 10;
+      display: flex;
+      gap: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .div-55 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-56 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-56 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-57 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-57 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-58 {
+      display: flex;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-58 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-59 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-59 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-60 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-60 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-61 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-61 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-62 {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-63 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-63 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-64 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-64 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-65 {
+      justify-content: center;
+      backdrop-filter: blur(7px);
+      border-color: rgba(62, 64, 149, 1);
+      border-style: solid;
+      border-width: 1px;
+      background-color: rgba(255, 255, 255, 0.5);
+      z-index: 10;
+      display: flex;
+      width: 100%;
+      max-width: 1600px;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-65 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-66 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 56px;
+    }
+
+    @media (max-width: 991px) {
+      .div-66 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-67 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      justify-content: center;
+      padding: 37px 36px;
+    }
+
+    @media (max-width: 991px) {
+      .div-67 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-68 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: start;
+      justify-content: center;
+      padding: 38px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-68 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-69 {
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      color: #3e4095;
+      justify-content: center;
+      padding: 29px 0;
+      font: 22px Poppins, sans-serif;
+    }
+
+    .div-70 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-70 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-71 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-71 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-72 {
+      display: flex;
+      width: 100%;
+      max-width: 1600px;
+      align-items: start;
+      gap: 0px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-72 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-73 {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-74 {
+      display: flex;
+      gap: 0px;
+    }
+
+    .div-75 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 85px 56px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-75 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-76 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      justify-content: center;
+      padding: 80px 36px;
+    }
+
+    @media (max-width: 991px) {
+      .div-76 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-77 {
+      z-index: 10;
+      display: flex;
+      gap: 0px;
+    }
+
+    .div-78 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 85px 56px 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-78 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-79 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      justify-content: center;
+      padding: 80px 36px;
+    }
+
+    @media (max-width: 991px) {
+      .div-79 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-80 {
+      align-self: stretch;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+      .div-80 {
+        max-width: 100%;
+      }
+    }
+
+    .div-81 {
+      display: flex;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-81 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-82 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: start;
+      justify-content: center;
+      padding: 38px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-82 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-83 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-83 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-84 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-84 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-85 {}
+
+    @media (max-width: 991px) {
+      .div-85 {
+        max-width: 100%;
+      }
+    }
+
+    .div-86 {
+      gap: 20px;
+      display: flex;
+    }
+
+    @media (max-width: 991px) {
+      .div-86 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+
+    .div-87 {
+      z-index: 10;
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-88 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-88 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-89 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 38px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-89 {
+        padding: 0 20px;
+      }
+    }
+
+    .column-3 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 62%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-3 {
+        width: 100%;
+      }
+    }
+
+    .div-90 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-90 {
+        max-width: 100%;
+      }
+    }
+
+    .div-91 {
+      display: flex;
+      gap: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .div-91 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-92 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-92 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-93 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-93 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-94 {
+      z-index: 10;
+      display: flex;
+      gap: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .div-94 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-95 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-95 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-96 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      flex-grow: 1;
+      width: fit-content;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-96 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-97 {
+      display: flex;
+      gap: 0px;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    @media (max-width: 991px) {
+      .div-97 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-98 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 25px;
+    }
+
+    @media (max-width: 991px) {
+      .div-98 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-99 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 37px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-99 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-100 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: start;
+      justify-content: center;
+      padding: 40px 22px;
+    }
+
+    @media (max-width: 991px) {
+      .div-100 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-101 {
+      align-self: center;
+      display: flex;
+      margin-top: 81px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-101 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-102 {
+      align-items: center;
+      border-radius: 14498.549px;
+      background-color: #3e4095;
+      display: flex;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      padding: 4px;
+    }
+
+    .img-8 {
+      aspect-ratio: 0.96;
+      object-fit: auto;
+      object-position: center;
+      width: 24px;
+    }
+
+    .div-103 {
+      display: flex;
+      gap: 15px;
+      font-size: 17px;
+      color: #000;
+      font-weight: 400;
+      white-space: nowrap;
+      margin: auto 0;
+    }
+
+    @media (max-width: 991px) {
+      .div-103 {
+        white-space: initial;
+      }
+    }
+
+    .div-104 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-105 {
+      color: #fff;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .div-106 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-107 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-108 {
+      display: flex;
+      align-items: start;
+      gap: 9px;
+      padding: 14px 2px 4px;
+    }
+
+    @media (max-width: 991px) {
+      .div-108 {
+        white-space: initial;
+      }
+    }
+
+    .div-109 {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .div-110 {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .div-111 {
+      font-family: Helvetica, sans-serif;
+    }
+
+    .div-112 {
+      font-family: Roboto, sans-serif;
+    }
+
+    .div-113 {
+      align-items: center;
+      border-radius: 14498.549px;
+      background-color: #3e4095;
+      display: flex;
+      justify-content: center;
+      width: 33px;
+      height: 33px;
+      padding: 4px;
+    }
+
+    .img-9 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 25px;
+    }
+
+    .div-114 {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: var(--Layout-800, #222);
+      font-weight: 500;
+    }
+
+    .div-115 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-115 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-116 {
+      font-family: Poppins, sans-serif;
+      border-color: rgba(62, 64, 149, 1);
+      border-style: dashed;
+      border-width: 1px;
+      background-color: #f2f3ff;
+      z-index: 10;
+      align-items: center;
+      justify-content: center;
+      padding: 85px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-116 {
+        padding: 0 20px;
+      }
+    }
+
+    .div-117 {
+      margin-top: 298px;
+      width: 100%;
+      max-width: 1600px;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-117 {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+
+    .div-118 {
+      gap: 20px;
+      display: flex;
+    }
+
+    @media (max-width: 991px) {
+      .div-118 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+
+    .column-4 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .column-4 {
+        width: 100%;
+      }
+    }
+
+    .img-10 {
+      aspect-ratio: 1.18;
+      object-fit: auto;
+      object-position: center;
+      width: 385px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 991px) {
+      .img-10 {
+        margin-top: 20px;
+      }
+    }
+
+    .column-5 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-5 {
+        width: 100%;
+      }
+    }
+
+    .img-11 {
+      aspect-ratio: 1.18;
+      object-fit: auto;
+      object-position: center;
+      width: 385px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 991px) {
+      .img-11 {
+        margin-top: 20px;
+      }
+    }
+
+    .column-6 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-6 {
+        width: 100%;
+      }
+    }
+
+    .img-12 {
+      aspect-ratio: 1.18;
+      object-fit: auto;
+      object-position: center;
+      width: 385px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 991px) {
+      .img-12 {
+        margin-top: 20px;
+      }
+    }
+
+    .column-7 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 25%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-7 {
+        width: 100%;
+      }
+    }
+
+    .img-13 {
+      aspect-ratio: 1.18;
+      object-fit: auto;
+      object-position: center;
+      width: 385px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 991px) {
+      .img-13 {
+        margin-top: 20px;
+      }
+    }
+
+    .div-119 {
+      color: #000;
+      margin-top: 64px;
+      font: 600 40px Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-119 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-120 {
+      color: #000;
+      text-align: center;
+      margin-top: 20px;
+      font: 600 18px Poppins, sans-serif;
+    }
+
+    .div-121 {
+      background-color: #484a9a;
+      align-self: stretch;
+      display: flex;
+      margin-top: 200px;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-121 {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+
+    .div-122 {
+      display: flex;
+      width: 100%;
+      max-width: 1600px;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+      margin: 20px 0 7px;
+    }
+
+    @media (max-width: 991px) {
+      .div-122 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-123 {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .img-14 {
+      aspect-ratio: 2.78;
+      object-fit: auto;
+      object-position: center;
+      width: 215px;
+      max-width: 100%;
+    }
+
+    .div-124 {
+      font-family: Poppins, sans-serif;
+      align-self: stretch;
+      margin-top: 34px;
+    }
+
+    .img-15 {
+      aspect-ratio: 8.33;
+      object-fit: auto;
+      object-position: center;
+      width: 161px;
+      margin-top: 32px;
+      max-width: 100%;
+    }
+
+    .div-125 {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 400;
+      line-height: 150%;
+      margin: auto 0;
+    }
+
+    .div-126 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-127 {
+      font-family: Poppins, sans-serif;
+      margin-top: 53px;
+    }
+
+    @media (max-width: 991px) {
+      .div-127 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-128 {
+      font-family: Poppins, sans-serif;
+      margin-top: 32px;
+    }
+
+    .div-129 {
+      font-family: Poppins, sans-serif;
+      margin-top: 32px;
+    }
+
+    .div-130 {
+      font-family: Poppins, sans-serif;
+      margin-top: 32px;
+    }
+
+    .div-131 {
+      font-family: Poppins, sans-serif;
+      margin-top: 32px;
+    }
+
+    .div-132 {
+      display: flex;
+      margin-top: 8px;
+      flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+      .div-132 {
+        max-width: 100%;
+      }
+    }
+
+    .div-133 {}
+
+    @media (max-width: 991px) {
+      .div-133 {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+
+    .div-134 {
+      gap: 20px;
+      display: flex;
+    }
+
+    @media (max-width: 991px) {
+      .div-134 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    }
+
+    .column-8 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 60%;
+      margin-left: 0px;
+    }
+
+    @media (max-width: 991px) {
+      .column-8 {
+        width: 100%;
+      }
+    }
+
+    .div-135 {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    @media (max-width: 991px) {
+      .div-135 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-136 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 32px Outfit, sans-serif;
+    }
+
+    .div-137 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      margin-top: 53px;
+      font: 18px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-137 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-138 {
+      margin-top: 30px;
+      font: 400 16px/24px Poppins, sans-serif;
+    }
+
+    .column-9 {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 40%;
+      margin-left: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .column-9 {
+        width: 100%;
+      }
+    }
+
+    .div-139 {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 205.5%;
+    }
+
+    @media (max-width: 991px) {
+      .div-139 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-140 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-141 {
+      display: flex;
+      margin-top: 50px;
+      gap: 10px;
+    }
+
+    @media (max-width: 991px) {
+      .div-141 {
+        margin-top: 40px;
+      }
+    }
+
+    .img-16 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-142 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-143 {
+      display: flex;
+      margin-top: 27px;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 991px) {
+      .div-143 {
+        white-space: initial;
+      }
+    }
+
+    .img-17 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-144 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-145 {
+      display: flex;
+      margin-top: 32px;
+      width: 100%;
+      align-items: start;
+      gap: 20px;
+      color: #fff;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-145 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-146 {
+      border-radius: 9999px;
+      border-color: rgba(255, 255, 255, 1);
+      border-style: solid;
+      border-width: 1px;
+      background-color: #484a9a;
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+      padding: 10px 10px 10px 20px;
+    }
+
+    .div-147 {
+      margin: auto 0;
+      font: 300 14px Roboto, sans-serif;
+    }
+
+    .div-148 {
+      justify-content: center;
+      border-radius: 999px;
+      background-color: #ec3237;
+      white-space: nowrap;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      font: 500 18px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-148 {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+
+    .div-149 {
+      display: flex;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 33px;
+    }
+
+    @media (max-width: 991px) {
+      .div-149 {
+        flex-wrap: wrap;
+      }
+    }
+
+    .img-18 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+      margin: auto 0;
+    }
+
+    .div-150 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    @media (max-width: 991px) {
+      .div-150 {
+        max-width: 100%;
+      }
+    }
+
+    .div-151 {
+      background-color: #ec3237;
+      align-self: stretch;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 205.5%;
+      justify-content: center;
+      padding: 38px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-151 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .div-152 {
+      display: flex;
+      width: 100%;
+      max-width: 1598px;
+      gap: 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-152 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-153 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    @media (max-width: 991px) {
+      .div-153 {
+        max-width: 100%;
+      }
+    }
+
+    .div-154 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+  </style>
+
+</body>
+
+</html>

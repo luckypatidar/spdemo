@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+    </head>
+    <body>
+
+      <!--Header Start -->
+      <div class="div-nav">
+        <div class="div-2-nav">
+          <img loading="lazy"
+            srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+            class="img-nav" />
+          <div class="div-3-nav">
+            <div class="div-4-nav"><a href="/index.html">Home</a></div>
+            <div class="div-5-nav"><a href="/about.html">About Us</a></div>
+            <div class="div-6-nav">
+              <div class="div-7-nav">Products</div>
+              <img loading="lazy"
+              src="/asset/img/drop-down-arrow.png" 
+              class="img-2-nav" />
+              <div class="submenu-nav">
+                <div class="submenu-item"><a href="/product.html">Product 1</a></div>
+                <div class="submenu-item"><a href="/product-detail.html">Product 2</a></div>
+                <div class="submenu-item"><a href="/product-detail.html">Product 3</a></div>
+              </div>
+            </div>
+            <div class="div-8-nav"><a href="/career.html">Career</a></div>
+          </div>
+          <div class="div-9-nav"><a href="index.html#contact-us">Contact</a></div>
+        </div>
+      </div>
+      
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+    
+        body {
+          margin: 0;
+          overflow-x: hidden;
+        }
+    
+        .div-nav {
+          align-items: center;
+          background-color: #fff;
+          display: flex;
+          text-transform: uppercase;
+          justify-content: center;
+          padding: 15px 60px;
+          max-width: 100%;
+          overflow: hidden;
+        }
+    
+        @media (max-width: 991px) {
+          .div-nav {
+            padding: 0 20px;
+          }
+        }
+    
+        .div-2-nav {
+          align-items: center;
+          display: flex;
+          width: 100%;
+          max-width: 1610px;
+          gap: 20px;
+          justify-content: space-between;
+          align-items: center;
+        }
+    
+        @media (max-width: 991px) {
+          .div-2-nav {
+            max-width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+          }
+        }
+    
+        .img-nav {
+          aspect-ratio: 2.5;
+          object-fit: auto;
+          object-position: center;
+          width: 208px;
+          align-self: stretch;
+          max-width: 100%;
+          cursor: pointer;
+        }
+    
+        .div-3-nav {
+          align-self: stretch;
+          display: flex;
+          gap: 20px;
+          font-size: 18px;
+          color: #000;
+          font-weight: 400;
+          justify-content: space-between;
+          margin: auto 0;
+          align-items: center;
+        }
+    
+        @media (max-width: 991px) {
+          .div-3-nav {
+            max-width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+          }
+          .div-4-nav{
+            margin-left: 50px;
+          }
+        }
+    
+        .div-4-nav,
+        .div-5-nav,
+        .div-7-nav,
+        .div-8-nav {
+          font-family: Poppins, sans-serif;
+          white-space: nowrap;
+          cursor: pointer;
+        }
+    
+        .div-5-nav,
+        .div-6-nav,
+        .div-8-nav {
+          margin-left: 50px;
+        }
+    
+        .div-4-nav a,
+        .div-5-nav a,
+        .div-7-nav a,
+        .div-8-nav a,
+        .submenu-item a {
+          color: #333;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+    
+        .div-9-nav a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+        }
+    
+        .div-6-nav {
+          display: flex;
+          gap: 8px;
+          white-space: nowrap;
+          padding: 7px 0;
+          position: relative;
+        }
+    
+        .img-2-nav {
+          object-fit: auto;
+          object-position: center;
+          width: 9px;
+          margin: auto 0;
+          cursor: pointer;
+        }
+    
+        .div-9-nav {
+          justify-content: center;
+          border-radius: 10px;
+          background-color: #ec3237;
+          align-self: stretch;
+          color: #fff;
+          margin: auto 0;
+          padding: 13px 22px;
+          font: 500 22px Poppins, sans-serif;
+          cursor: pointer;
+        }
+    
+        @media (max-width: 991px) {
+          .div-9-nav {
+            padding: 20px;
+          }
+        }
+    
+        /* Submenu styles */
+        .submenu-nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: white;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          border-radius: 4px;
+          z-index: 1000;
+          min-width: 150px;
+          /* Ensures the submenu has enough width */
+        }
+    
+        .submenu-item {
+          padding: 10px 20px;
+          white-space: nowrap;
+          cursor: pointer;
+          font-family: Poppins, sans-serif;
+        }
+    
+        .submenu-item:hover {
+          background-color: #f1f1f1;
+        }
+    
+        .div-6-nav:hover .submenu-nav {
+          display: block;
+        }
+      </style>
+    
+      <!--Header End-->
+      
+          <div class="div-10">
+            <div class="div-11">
+              <h1 class="h1">About Us</h1>
+              <p class="p">To Make Better Health, To Grow Better Health</p>
+            </div>
+            <div class="div-12">
+              <div class="div-13">
+                <img
+                  loading="lazy"
+                  alt=""
+                  srcset="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e?width=2000 2000w, https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2Ff566f9ad25164e378c0aae1e1292239e"
+                  class="img-3"
+                />
+              </div>
+              <div class="div-14">
+                <h2 class="h2">Our Story</h2>
+                <p class="p-2">
+               
+            Meliorate Health Pvt. Ltd. is a leading Exporter/Manufacturer from
+            Mumbai for Pharmaceuticals, Nutraceuticals, Herbal, Veterinary
+            products, Disinfectants, Cosmetics, Raw Materials, &amp; Surgical products
+            etc. We aim to provide one stop service center for all our global
+            partners for hospital, medical &amp; wellness needs. Our strength lies in
+            developing products (Nutraceuticals &amp; Pharmaceuticals) as per our
+            customer’s need.
+            
+                </p>
+              </div>
+            </div>
+          </div>
+          <style>
+            .div {
+              align-items: center;
+              background-color: #fff;
+              display: flex;
+              text-transform: uppercase;
+              justify-content: center;
+              padding: 15px 60px;
+            }
+            @media (max-width: 991px) {
+              .div {
+                padding: 0 20px;
+              }
+            }
+            .div-2 {
+              align-items: center;
+              display: flex;
+              width: 100%;
+              max-width: 1610px;
+              gap: 20px;
+              justify-content: space-between;
+            }
+            @media (max-width: 991px) {
+              .div-2 {
+                max-width: 100%;
+                flex-wrap: wrap;
+              }
+            }
+            .img {
+              aspect-ratio: 2.5;
+              object-fit: auto;
+              object-position: center;
+              width: 208px;
+              align-self: stretch;
+              max-width: 100%;
+            }
+            .div-3 {
+              align-self: stretch;
+              display: flex;
+              gap: 20px;
+              font-size: 18px;
+              color: #000;
+              font-weight: 400;
+              justify-content: space-between;
+              margin: auto 0;
+            }
+            @media (max-width: 991px) {
+              .div-3 {
+                max-width: 100%;
+                flex-wrap: wrap;
+              }
+            }
+            .div-4 {
+              font-family: Poppins, sans-serif;
+            }
+            .div-5 {
+              font-family: Poppins, sans-serif;
+            }
+            .div-6 {
+              display: flex;
+              gap: 8px;
+              white-space: nowrap;
+              padding: 7px 0;
+            }
+            @media (max-width: 991px) {
+              .div-6 {
+                white-space: initial;
+              }
+            }
+            .div-7 {
+              font-family: Poppins, sans-serif;
+              flex-grow: 1;
+              margin-top: -5px;
+            }
+            .img-2 {
+              aspect-ratio: 1.79;
+              object-fit: auto;
+              object-position: center;
+              width: 9px;
+              stroke-width: 1px;
+              stroke: #000;
+              border-color: rgba(0, 0, 0, 1);
+              border-style: solid;
+              border-width: 1px;
+              margin: auto 0;
+            }
+            .div-8 {
+              font-family: Poppins, sans-serif;
+            }
+            .div-9 {
+              justify-content: center;
+              border-radius: 10px;
+              background-color: #ec3237;
+              align-self: stretch;
+              color: #fff;
+              margin: auto 0;
+              padding: 13px 22px;
+              font: 500 22px Poppins, sans-serif;
+            }
+            @media (max-width: 991px) {
+              .div-9 {
+                padding: 0 20px;
+              }
+            }
+            .div-10 {
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              align-items: center;
+              background-color: rgb(248, 248, 248);
+              font-family:  Poppins, sans-serif;
+              width: 100%;
+              margin: 0 auto;
+              padding: 50px 0 210px 0;
+            }
+            .div-11 {
+              margin-bottom: 40px;
+              max-width: 600px;
+              text-align: center;
+            }
+            .h1 {
+              font-size: 36px;
+              font-weight: bold;
+              margin-bottom: 20px;
+              font-family:  Poppins, sans-serif;
+            }
+            .p {
+              font-size: 18px;
+              line-height: 1.6;
+              font-family:  Poppins, sans-serif;
+            }
+            .div-12 {
+              justify-content: space-between;
+              align-items: center;
+              display: flex;
+              max-width: 1000px;
+              width: 90%;
+              margin: 0 auto;
+            }
+            @media (max-width: 991px) {
+              .div-12 {
+                flex-direction: column;
+                justify-content: normal;
+              }
+            }
+            .div-13 {
+              margin-right: 20px;
+              flex-basis: 0%;
+              flex-grow: 1;
+              max-width: 45%;
+            }
+            @media (max-width: 991px) {
+              .div-13 {
+                margin-bottom: 20px;
+              }
+            }
+            .img-3 {
+              aspect-ratio: 4 / 3;
+              object-fit: cover;
+              object-position: center;
+              width: 100%;
+            }
+            .div-14 {
+              flex-basis: 0%;
+              flex-grow: 1;
+              max-width: 45%;
+            }
+            .h2 {
+              font-size: 24px;
+              font-weight: bold;
+              margin-bottom: 20px;
+            }
+            .p-2 {
+              line-height: 1.6;
+              
+            }
+          </style>
+
+<div class="div-79">
+  <div class="div-80">
+    <div class="div-81">
+      <img loading="lazy"
+        srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ee9674dbe9d77b78a488caf646ccd3f0eb53b63df6747431793c4dd1e2fbbab3?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+        class="img-17" />
+      <div class="div-82">
+        Meliorate Health is one top solution for all our global partners with
+        an array of
+        <br />
+        Pharmaceuticals, nutraceuticals & Cosmeceuticals.
+      </div>
+      <div class="div-83">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff31b25e75a011947349d67811b4d577eb9f82d669eb5fd51c6f16d725f1c6ae?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-18" />
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/77cc7bc2e8465b9bb6f6e0a7c96d505f0f0f2ec0a7eb16804fe1fbc7fb314330?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-19" />
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e021f397128f23bad0b1393727a1d9b1888728722bb88452f8cf616fc53abb6b?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-20" />
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d34153205d7f9a872bfd67bbdd66caaf269187163f496d9dad6f8ea32262dfd8?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-21" />
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/afe9ec773c99d36d5d4ca2c76a6fd20ece6466de259b8a86ef71a124d7ad8aa5?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-22" />
+      </div>
+    </div>
+    <div class="div-84">
+      <div class="div-85">Quick Links</div>
+      <div class="div-86">• Home</div>
+      <div class="div-87">• About Us</div>
+      <div class="div-88">• Product</div>
+      <div class="div-89">• Contact Us</div>
+      <div class="div-90">• Career</div>
+    </div>
+    <div class="div-91">
+      <div class="div-92">Newsletter</div>
+      <div class="div-93">Subscribe To Our Newsletter</div>
+      <div class="div-94">Subscribe To Get Latest Offers</div>
+      <div class="div-95">
+        <div class="div-96">Enter Your Email</div>
+        <div class="div-97">Subscribe</div>
+      </div>
+    </div>
+    <div class="div-98">
+      <div class="div-99">Contact Details</div>
+      <div class="div-100">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a59cfe641dc0cf7fe4ccf9af0a0c310ea8a8ab126ce50e32c4ea70d2153b3812?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-23" />
+        <div class="div-101">+91 9967840625</div>
+      </div>
+      <div class="div-102">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/84f37c5134b2f67b03f17d9e1d1971547616ecbc4e1a553806deba38eef31c1e?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-24" />
+        <div class="div-103">+91 22-40105044</div>
+      </div>
+      <div class="div-104">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecbbd7f47bb3eca751064cc8bcae4d16cf2332790fa0bb9d8cb7524c01477bca?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-25" />
+        <div class="div-105">
+          <div class="div-106">hr@melioratehealth.com</div>
+          <div class="div-107">info@melioratehealth.com</div>
+        </div>
+      </div>
+      <div class="div-108">
+        <img loading="lazy"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e671c62c3478e359c4052bdeacc772bb80c23596365543ae5dd4e90cd820d177?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
+          class="img-26" />
+        <div class="div-109">
+          810/811, Master Mind V, Royal Palms Estate, Aarey Milk Colony,
+          Goregaon (East), Mumbai – 400065, India
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="div-110">
+  <div class="div-111">
+    <div class="div-112">
+      Copyright 2015 Meliorate Health OPC Pvt. Ltd. All Rights Reserved.
+    </div>
+  </div>
+</div>
+
+<style>
+  .div-79 {
+      background-color: #484a9a;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 60px 46px;
+    }
+
+    @media (max-width: 991px) {
+      .div-79 {
+        max-width: 100%;
+        margin-top: 40px;
+        padding: 0 20px;
+      }
+    }
+
+    .div-80 {
+      display: flex;
+      margin-top: 20px;
+      width: 100%;
+      max-width: 1600px;
+      align-items: start;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-80 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-81 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .img-17 {
+      aspect-ratio: 2.78;
+      object-fit: auto;
+      object-position: center;
+      width: 215px;
+      max-width: 100%;
+    }
+
+    .div-82 {
+      color: #fff;
+      margin-top: 30px;
+      font: 400 14px Poppins, sans-serif;
+    }
+
+    .div-83 {
+      align-items: start;
+      display: flex;
+      margin-top: 30px;
+      padding-right: 80px;
+      gap: 16px;
+    }
+
+    @media (max-width: 991px) {
+      .div-83 {
+        padding-right: 20px;
+      }
+    }
+
+    .img-18 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+    }
+
+    .img-19 {
+      aspect-ratio: 1.41;
+      object-fit: auto;
+      object-position: center;
+      width: 24px;
+      fill: #fff;
+    }
+
+    .img-20 {
+      aspect-ratio: 1.2;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+      align-self: stretch;
+      margin: auto 0;
+    }
+
+    .img-21 {
+      aspect-ratio: 0.94;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      align-self: stretch;
+    }
+
+    .img-22 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 18px;
+      fill: #fff;
+    }
+
+    .div-84 {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 400;
+      line-height: 150%;
+      padding: 3px 0;
+      width: 280px;
+      margin-left: 80px;
+    }
+
+    .div-85 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-86 {
+      font-family: Poppins, sans-serif;
+      margin-top: 47px;
+    }
+
+    @media (max-width: 991px) {
+      .div-86 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-87 {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-88 {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-89 {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-90 {
+      font-family: Poppins, sans-serif;
+      margin-top: 20px;
+    }
+
+    .div-91 {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      width: 580px;
+      margin-left: 80px;
+    }
+
+    .div-92 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    .div-93 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      margin-top: 40px;
+      font: 700 18px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-93 {
+        margin-right: 9px;
+      }
+    }
+
+    .div-94 {
+      margin-top: 30px;
+      font: 400 16px/24px Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-94 {
+        margin-right: 9px;
+      }
+    }
+
+    .div-95 {
+      border-radius: 9999px;
+      border-color: rgba(255, 255, 255, 1);
+      border-style: solid;
+      border-width: 1px;
+      background-color: #484a9a;
+      display: flex;
+      margin-top: 41px;
+      gap: 20px;
+      justify-content: space-between;
+      padding: 10px 10px 10px 20px;
+    }
+
+    @media (max-width: 991px) {
+      .div-95 {
+        margin-top: 40px;
+      }
+    }
+
+    .div-96 {
+      margin: auto 0;
+      font: 300 14px Roboto, sans-serif;
+    }
+
+    .div-97 {
+      justify-content: center;
+      border-radius: 999px;
+      background-color: #ec3237;
+      white-space: nowrap;
+      text-transform: uppercase;
+      padding: 13px 22px;
+      font: 500 18px Roboto, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-97 {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    }
+
+    .div-98 {
+      align-items: start;
+      align-self: stretch;
+      display: flex;
+      padding-bottom: 6px;
+      flex-direction: column;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 205.5%;
+      margin-left: 80px;
+    }
+
+    @media (max-width: 991px) {
+      .div-98 {
+        max-width: 100%;
+      }
+    }
+
+    .div-99 {
+      font-feature-settings: "liga" off;
+      text-transform: capitalize;
+      align-self: stretch;
+      font: 700 32px Outfit, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-99 {
+        max-width: 100%;
+      }
+    }
+
+    .div-100 {
+      display: flex;
+      margin-top: 42px;
+      gap: 10px;
+    }
+
+    @media (max-width: 991px) {
+      .div-100 {
+        margin-top: 40px;
+      }
+    }
+
+    .img-23 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-101 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-102 {
+      display: flex;
+      margin-top: 26px;
+      gap: 10px;
+    }
+
+    .img-24 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+    }
+
+    .div-103 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+      margin: auto 0;
+    }
+
+    .div-104 {
+      display: flex;
+      margin-top: 34px;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 991px) {
+      .div-104 {
+        white-space: initial;
+      }
+    }
+
+    .img-25 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+      margin: auto 0;
+    }
+
+    .div-105 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 991px) {
+      .div-105 {
+        white-space: initial;
+      }
+    }
+
+    .div-106 {
+      font-family: Poppins, sans-serif;
+    }
+
+    .div-107 {
+      font-family: Poppins, sans-serif;
+      margin-top: 17px;
+    }
+
+    .div-108 {
+      align-self: stretch;
+      display: flex;
+      margin-top: 37px;
+      gap: 10px;
+      line-height: 33px;
+    }
+
+    @media (max-width: 991px) {
+      .div-108 {
+        flex-wrap: wrap;
+      }
+    }
+
+    .img-26 {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 30px;
+      margin: auto 0;
+    }
+
+    .div-109 {
+      font-family: Poppins, sans-serif;
+      flex-grow: 1;
+      flex-basis: auto;
+    }
+
+    @media (max-width: 991px) {
+      .div-109 {
+        max-width: 100%;
+      }
+    }
+
+    .div-110 {
+      background-color: #ec3237;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 33px;
+      justify-content: center;
+      padding: 30px 60px;
+    }
+
+    @media (max-width: 991px) {
+      .div-110 {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+
+    .div-111 {
+      display: flex;
+      width: 100%;
+      max-width: 1601px;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 991px) {
+      .div-111 {
+        max-width: 100%;
+        flex-wrap: wrap;
+      }
+    }
+
+    .div-112 {
+      font-family: Poppins, sans-serif;
+    }
+
+    @media (max-width: 991px) {
+      .div-112 {
+        max-width: 100%;
+      }
+    }
+
+    .div-113 {
+      font-family: Poppins, sans-serif;
+    }
+</style>
+
+    </body>
+</html>
