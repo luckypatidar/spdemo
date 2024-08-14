@@ -689,7 +689,8 @@ document.addEventListener('DOMContentLoaded', function() {
             package: '20GM',
             discri: 'Clindamycin 1%w/w',
             caracteristiques: 'Antibiotic to stop the growth of certain bacteria that cause acne.',
-            product: 'Pharmaceuticals'
+            product: 'Pharmaceuticals',
+            indication: 'Antibiotic'
         },
         49: {
             title: 'Gimipide D Tablets',
@@ -1132,7 +1133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             product: 'Pharmaceuticals'
         },
         80: {
-            title: 'MELSULOSIN',
+            title: 'Melsulosin',
             imga: '/asset/img/product/melsu.png',
             imgb: '',
             imgc: '',
@@ -1315,7 +1316,7 @@ document.addEventListener('DOMContentLoaded', function() {
             discri: 'Mupirocin USP 2.0% w/w ',
             caracteristiques: 'Secondarily infected traumatic lesions , sutured bones or abrasions.',
             product: 'Pharmaceuticals',
-            indication:'Secondarily infected traumatic lesions ,sutured bones or abrasions'
+            indication:'Secondarily infected traumatic lesions, sutured bones or abrasions'
         },
         93: {
             title: 'SM-DOL',
