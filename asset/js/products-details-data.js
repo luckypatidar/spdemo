@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         8: {
             title: 'PROSVICIUM/ REXICALVIT/ CALZUVITRY/ CIUMSAVE/TGP/VITACIUM',
-            imga: '/asset/img/product/prosviclum.jpeg',
-            imgb: '/asset/img/product/calcium carbonate.jpeg',
+            imga: '/asset/img/product/Prosvicium packshot.png',
+            imgb: '/asset/img/product/TGP packshot.png',
             imgc: '/asset/img/product/ciumsave.png',
             imgd: '/asset/img/product/rexicalvit.png',
-            imgviewer: '/asset/img/product/prosviclum.jpeg',
+            imgviewer:'/asset/img/product/Prosvicium packshot.png',
             description: 'CALCIUM CARBONATE AND VITAMIN D3 500 mg/ 200IU',
             dosageform: 'TABLET',
             package: '3x10\'s Alu Pvc Blister',
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
             product: 'Nutraceuticals'
         },
         34: {
-            title: 'BLOOMROSE',
+            title: 'Bloomrose',
             imga: '/asset/img/product/Bloomrose.png',
             imgb: '',
             imgc: '',
@@ -480,7 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
             product: 'Nutraceuticals'
         },
         35: {
-            title: 'EVETECT/PRIMDIN',
+            title: 'Evetect/Primadin',
             imga: '/asset/img/product/evetect1.png',
             imgb: '/asset/img/product/primdin1.png',
             imgc: '',
@@ -524,11 +524,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },   
         388: {
             title: 'Melsilogen',
-            imga: '/asset/img/product/Melsilogen.png',
-            imgb: '',
+            imga: '/asset/img/product/Melsilogen all.png',
+            imgb: '/asset/img/product/Melsilogen.png',
             imgc: '',
             imgd: '',
-            imgviewer: '/asset/img/product/Melsilogen.png',
+            imgviewer:  '/asset/img/product/Melsilogen all.png',
             description: '2.5gm Lozenge contains Mulethi(Glycyrrhiza glabra) root 20mg, Sounth(Zingiber Officinale)Rhizome 5mg,  Baheda(Terminalia belerica) Fruit 5mg',
             dosageform: ' Herbal Lozenge (Sugar base)',
             package: '2x12s alu/pvc ',
@@ -1134,11 +1134,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         80: {
             title: 'Melsulosin',
-            imga: '/asset/img/product/melsu.png',
+            imga: '/asset/img/product/Melsu.png',
             imgb: '',
             imgc: '',
             imgd: '',
-            imgviewer: '/asset/img/product/melsu.png',
+            imgviewer: '/asset/img/product/Melsu.png',
             description: 'Tamsulosin Hydrochloride USP 0.4mg',
             dosageform: 'Capsules',
             package: '1x10\'s Alu Alu blister',
