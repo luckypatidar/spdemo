@@ -7,24 +7,56 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="icon" type="image/png" href="/asset/img/icon.png">
 </head>
+<script type="text/javascript">
 
+  // Function to toggle the menu
+  function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+  }
+
+  function closeMenu(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
+
+    // Now navigate to the href manually
+    const targetHref = event.currentTarget.getAttribute('href');
+    if (targetHref) {
+      window.location.href = targetHref;
+    }
+  }
+
+</script>
 <body>
   <div class="div-nav">
     <div class="div-2-nav">
-      <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
-      <div class="div-3-nav">
-        <div class="div-4-nav"><a href="/index.html">Home</a></div>
-        <div class="div-5-nav"><a href="/index.html#about-us">About Us</a></div>
+      <a href="/index.html">
+        <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Toggle button -->
+      <div id="nav-menu" class="div-3-nav">
+        <div class="div-4-nav"><a href="/">Home</a></div>
+        <div class="div-5-nav"><a href="/#about-us">About Us</a></div>
         <div class="div-6-nav">
           <div class="div-7-nav"><a href="/product.html">Products</a></div>
-         
+          <div class="submenu-nav">
+            <div class="submenu-item"><a href="#" onclick="closeMenu(event)">Home</a></div>
+            <div class="submenu-item"><a href="/#about-us" onclick="closeMenu(event)">About Us</a></div>
+            <div class="submenu-item"><a href="/product.html" onclick="closeMenu(event)">Products</a></div>
+            <div class="submenu-item"><a href="/career.html" onclick="closeMenu(event)">Career</a></div>
+            <div class="submenu-item"><a href="/#contact-us" onclick="closeMenu(event)">Contact</a></div>
+          </div>
         </div>
         <div class="div-8-nav"><a href="/career.html">Career</a></div>
+        <div class="div-9-nav"><a href="/#contact-us">Contact</a></div> <!-- Moved inside -->
       </div>
-      <div class="div-9-nav"><a href="/index.html#contact-us">Contact</a></div>
     </div>
   </div>
   <style>
+    /* image section  */
     .container-main {
       display: flex;
       width: 100%;
@@ -51,194 +83,259 @@
 
     .image-logo-main {
       position: absolute;
-      /* Allow absolute positioning */
-      top: 50%;
-      /* Center vertically */
+      top: 60%;
       left: 55%;
-      /* Center horizontally */
       transform: translate(-50%, -50%);
-      /* Offset by 50% of its own size */
       padding: 10px;
+      animation: moveUp 1s ease-out forwards;
+    }
+
+    @keyframes moveUp {
+      from {
+        top: 60%;
+        /* Start position */
+      }
+
+      to {
+        top: 50%;
+        /* End position */
+      }
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .container-main {
+        height: 500px;
+        /* Adjust height for mobile */
+      }
+
+      .image-main {
+        object-position: top;
+        /* Adjust object position for mobile */
+      }
+
+      .image-logo-main {
+        top: 70%;
+        /* Adjust the logo position for mobile */
+        width: 80%;
+        /* Reduce the logo size on mobile */
+      }
+
+      @keyframes moveUp {
+        from {
+          top: 70%;
+          /* Adjust the starting position for mobile */
+        }
+
+        to {
+          top: 60%;
+          /* Adjust the end position for mobile */
+        }
+      }
     }
   </style>
 
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    margin: 0;
-    overflow-x: hidden;
-  }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-  .div-nav {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    text-transform: uppercase;
-    justify-content: center;
-    padding: 15px 60px;
-    max-width: 100%;
-    overflow: hidden;
-  }
-
-  @media (max-width: 991px) {
     .div-nav {
-      padding: 0 20px;
-    }
-  }
-
-  .div-2-nav {
-    align-items: center;
-    display: flex;
-    width: 100%;
-    max-width: 1610px;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media (max-width: 991px) {
-    .div-2-nav {
-      max-width: 100%;
-      flex-wrap: wrap;
       align-items: center;
-    }
-  }
-
-  .img-nav {
-    aspect-ratio: 2.5;
-    object-fit: auto;
-    object-position: center;
-    width: 208px;
-    align-self: stretch;
-    max-width: 100%;
-    cursor: pointer;
-  }
-
-  .div-3-nav {
-    align-self: stretch;
-    display: flex;
-    gap: 20px;
-    font-size: 18px;
-    color: #000;
-    font-weight: 400;
-    justify-content: space-between;
-    margin: auto 0;
-    align-items: center;
-  }
-
-  @media (max-width: 991px) {
-    .div-3-nav {
+      background-color: #fff;
+      display: flex;
+      text-transform: uppercase;
+      justify-content: space-between;
+      /* Change justify-content to space-between */
+      padding: 15px 20px;
+      /* Reduced padding for mobile */
       max-width: 100%;
-      flex-wrap: wrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .div-2-nav {
       align-items: center;
       display: flex;
-      flex-direction: column;
+      width: 100%;
+      max-width: 1610px;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
     }
-    .div-4-nav{
+
+    .img-nav {
+      aspect-ratio: 2.5;
+      object-fit: contain;
+      object-position: center;
+      width: 150px;
+      /* Adjusted width for mobile */
+      max-width: 100%;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      /* Initially hidden */
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .div-3-nav {
+      align-self: stretch;
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      color: #000;
+      font-weight: 400;
+      justify-content: space-between;
+      margin: auto 0;
+      align-items: center;
+    }
+
+    .div-4-nav,
+    .div-5-nav,
+    .div-7-nav,
+    .div-8-nav {
+      font-family: Poppins, sans-serif;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .div-5-nav,
+    .div-6-nav,
+    .div-8-nav {
       margin-left: 50px;
     }
-  }
 
-  .div-4-nav,
-  .div-5-nav,
-  .div-7-nav,
-  .div-8-nav {
-    font-family: Poppins, sans-serif;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .div-5-nav,
-  .div-6-nav,
-  .div-8-nav {
-    margin-left: 50px;
-  }
-
-  .div-4-nav a,
-  .div-5-nav a,
-  .div-7-nav a,
-  .div-8-nav a,
-  .submenu-item a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .div-9-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-  }
-
-  .div-6-nav {
-    display: flex;
-    gap: 8px;
-    white-space: nowrap;
-    padding: 7px 0;
-    position: relative;
-  }
-
-  .img-2-nav {
-    object-fit: auto;
-    object-position: center;
-    width: 9px;
-    margin: auto 0;
-    cursor: pointer;
-  }
-
-  .div-9-nav {
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ec3237;
-    align-self: stretch;
-    color: #fff;
-    margin: auto 0;
-    padding: 13px 22px;
-    font: 500 22px Poppins, sans-serif;
-    cursor: pointer;
-  }
-
-  @media (max-width: 991px) {
-    .div-9-nav {
-      padding: 20px;
+    .div-4-nav a,
+    .div-5-nav a,
+    .div-7-nav a,
+    .div-8-nav a,
+    .submenu-item a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
     }
-  }
 
-  /* Submenu styles */
-  .submenu-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    z-index: 1000;
-    min-width: 150px;
-    /* Ensures the submenu has enough width */
-  }
+    .div-9-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+    }
 
-  .submenu-item {
-    padding: 10px 20px;
-    white-space: nowrap;
-    cursor: pointer;
-    font-family: Poppins, sans-serif;
-  }
+    .div-6-nav {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+      padding: 7px 0;
+      position: relative;
+    }
 
-  .submenu-item:hover {
-    background-color: #f1f1f1;
-  }
+    .img-2-nav {
+      object-fit: auto;
+      object-position: center;
+      width: 9px;
+      margin: auto 0;
+      cursor: pointer;
+    }
 
-  .div-6-nav:hover .submenu-nav {
-    display: block;
-  }
-</style>
+    .div-9-nav {
+      justify-content: center;
+      border-radius: 10px;
+      background-color: #ec3237;
+      align-self: stretch;
+      color: #fff;
+      margin: auto 0;
+      padding: 13px 22px;
+      font: 500 22px Poppins, sans-serif;
+      cursor: pointer;
+    }
 
+    /* Submenu styles */
+    .submenu-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      min-width: 150px;
+    }
+
+    .submenu-item {
+      padding: 10px 20px;
+      white-space: nowrap;
+      cursor: pointer;
+      font-family: Poppins, sans-serif;
+    }
+
+    .submenu-item:hover {
+      background-color: #f1f1f1;
+    }
+
+    .div-6-nav:hover .submenu-nav {
+      display: block;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .div-3-nav {
+        display: none;
+        /* Initially hide the menu */
+      }
+
+      .div-3-nav.active {
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: flex-end;
+        position: fixed;
+        background-color: #f5d5d5;
+        top: 4.5em;
+        width: 40%;
+        padding-bottom: 20px;
+        z-index: 20;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        /* Show the menu toggle button on mobile */
+      }
+
+      .div-5-nav,
+      .div-6-nav,
+      .div-8-nav {
+        margin-left: 0;
+        /* Remove left margin for mobile */
+      }
+
+      .div-9-nav {
+        /* width: 100%; Make it full width */
+        text-align: center;
+        align-self: center;
+        padding: 10px 0;
+        /* Adjust padding for spacing */
+        margin-left: 10px;
+        width: 140px;
+      }
+    }
+  </style>
 
 
   <div class="div">
@@ -260,7 +357,7 @@
       </div>
     </div>
     <div class="div-17">
-      <div class="div-18">
+      <div class="div-18" >
         <div class="div-19">Generic Drugs</div>
         <div style="width: 83%;" class="div-20">
           <div class="div-21">
@@ -351,9 +448,111 @@
         padding: 5px;
         border: 1px solid #3E4095;
       }
+
+      .table-container {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .tableclass {
+          display: none;
+        }
+        .table-container {
+          overflow-x: auto;
+          /* Enable horizontal scrolling */
+          -webkit-overflow-scrolling: touch;
+          /* Smooth scrolling on iOS */
+          width: 100%;
+          /* Ensure container takes full width */
+          margin: 0 auto;
+          /* Center the container if needed */
+          display: block;
+          /* Ensure block display */
+          padding-top: 20px;
+          margin-left: 10px;
+        }
+
+        table {
+          width: 100%;
+          /* Ensure table takes full width of its container */
+          border-collapse: collapse;
+          font-size: 0.9em;
+          /* Slightly smaller font size for better fit */
+          min-width: 600px;
+          /* Set a minimum width to force horizontal scrolling if needed */
+        }
+
+        th,
+        td {
+          padding: 15px;
+          /* Reduced padding for a more compact view */
+          text-align: left;
+        }
+
+        th {
+          background-color: #F2F3FF;
+        }
+
+        tr:nth-child(even) {
+          background-color: #F2F3FF;
+        }
+
+        tr:hover {
+          background-color: #f1f1f1;
+        }
+
+        .category {
+          text-align: center;
+          font-weight: bold;
+          background-color: #F2F3FF;
+        }
+
+        /* Hover Blur Effect */
+        .blur-hover {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .blur-hover:hover .text-blur {
+          filter: blur(5px);
+          transition: filter 0.3s;
+        }
+
+        .blur-hover:hover .hover-text {
+          opacity: 1;
+        }
+
+        .text-blur {
+          transition: filter 0.3s;
+        }
+
+        .hover-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s;
+          background-color: rgba(255, 255, 255, 0.8);
+          padding: 5px;
+          border: 1px solid #3E4095;
+        }
+
+        .blur-hover:hover::after {
+          content: 'View More Details';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          color: #3E4095;
+        }
+      }
     </style>
 
-    
+<div class="table-container">
     <table id="medTable" border="0" cellpadding="0" cellspacing="0" style="width:83%; display:flexbox; ">
       <tbody>
         <tr class="blur-hover" style="background-color: #cccefecd;">
@@ -899,7 +1098,553 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
+    <table id="medTable" class="tableclass" border="0" cellpadding="0" cellspacing="0" style="width:83%; display:flexbox; ">
+      <tbody>
+        <tr class="blur-hover" style="background-color: #cccefecd;">
+          <td class="class=text-blur" style="height:40px; width:75px">S.NO.</td>
+          <td style="width:379px">GENERIC NAME</td>
+          <td style="width:227px">STRENGTH</td>
+          <td style="width:221px">Dosage - PACK</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-BACTERIALS</strong>
+          </td>
+        </tr>
+        <tr class="blur-hover">
+          <td class="text-blur" style="height:40px; width:75px">1</td>
+          <td class="text-blur" style="width:379px">Ciprofloxacin Tablets USP</td>
+          <td class="text-blur" style="width:227px">250 mg &amp; 500 mg</td>
+          <td class="text-blur" style="width:221px">10's Tablets - Blister</td>
+          <div class="hover-text">Additional info about Ciprofloxacin</div>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">2</td>
+          <td style="width:379px">Levofloxacin Tablets</td>
+          <td style="width:227px">250 mg, 500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">3</td>
+          <td style="width:379px">Norfloxacin Tablets</td>
+          <td style="width:227px">400 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">4</td>
+          <td style="width:379px">Ofloxacin Tablets</td>
+          <td style="width:227px">200 mg, 400 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:50px; width:75px">5</td>
+          <td style="width:379px">Linezolid Tablets / Linezolid for Oral Suspension</td>
+          <td style="width:227px">600 mg, 100mg / 5 ml</td>
+          <td style="width:221px">4's Tablets Strip 30 ml -Dry Sy.- bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">6</td>
+          <td style="width:379px">Chloramphenicol Oral Suspension</td>
+          <td style="width:227px">125 mg/5ml</td>
+          <td style="width:221px">60 ml Suspn. - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">7</td>
+          <td style="width:379px">Azithromycin Tablets</td>
+          <td style="width:227px">250 mg, 500mg</td>
+          <td style="width:221px">6's Tablets Strip</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">8</td>
+          <td style="width:379px">Erythromycin Stearate Tablets / Erythromycin Estolate Suspension</td>
+          <td style="width:227px">250 mg.,500 mg &amp; 125 mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:73px; width:75px">9</td>
+          <td style="width:379px">Cotrimoxazole Tablets / Suspension</td>
+          <td style="width:227px">(400+80mg) , (800+160mg) &amp; (40+200mg/5ml)</td>
+          <td style="width:221px">10 Tabs- Blister 10 Tabs- Blister 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-DIARRHOEALS /
+              ANTI-INFECTIVES</strong></td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">10</td>
+          <td style="width:379px">Ciprofloxacin &amp; Tinidazole Tablets / Suspension</td>
+          <td style="width:227px">500 + 600 mg &amp; (125 mg+ 100 mg/ 5ml)</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 30 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">11</td>
+          <td style="width:379px">Ofloxacin &amp; Tinidazole Tablets</td>
+          <td style="width:227px">200+600 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">12</td>
+          <td style="width:379px">Ofloxacin &amp; Ornidazole Tablets</td>
+          <td style="width:227px">200+500mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">13</td>
+          <td style="width:379px">Ofloxacin &amp; Ornidazole suspension</td>
+          <td style="width:227px">50 mg + 125 mg</td>
+          <td style="width:221px">30ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:52px; width:75px">14</td>
+          <td style="width:379px">Metronidazole Tablets / Metronidazole Benzoate oral Suspension</td>
+          <td style="width:227px">200, 250 mg &amp; 125mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-FUNGALS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">15</td>
+          <td style="width:379px">Fluconazole tablets</td>
+          <td style="width:227px">150mg.</td>
+          <td style="width:221px">1's Tablet Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">16</td>
+          <td style="width:379px">Griseofulvin Tablets B.P.</td>
+          <td style="width:227px">500mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANALGESICS ,
+              ANTIPYRETICS &amp; ANTI-INFLAMMATORY</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">17</td>
+          <td style="width:379px">Diclofenac Tablets BP</td>
+          <td style="width:227px">50mg, 100 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">18</td>
+          <td style="width:379px">Diclofenac and Paracetamol Tablets</td>
+          <td style="width:227px">50 +500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">19</td>
+          <td style="width:379px">Aceclofenac and Paracetamol Tablets</td>
+          <td style="width:227px">100 +500 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:49px; width:75px">20</td>
+          <td style="width:379px">Ibuprofen &amp; Paracetamol Tablets / Suspension</td>
+          <td style="width:227px">(400+500 mg), 100+125mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:50px; width:75px">21</td>
+          <td style="width:379px">Ibuprofen Tablets / Suspension</td>
+          <td style="width:227px">200 mg, 400 mg, 100mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">22</td>
+          <td style="width:379px">Paracetamol Tablets /Suspension</td>
+          <td style="width:227px">500 mg, 125 mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:53px; width:75px">23</td>
+          <td style="width:379px">Diclofenac Pottassium &amp; Paracetamol, Trypsin &amp; Chymotrypsin Tablets</td>
+          <td style="width:227px">50mg+325mg+50000AU</td>
+          <td style="width:221px">10's Alu-Alu Strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>EXPECTORANTS,
+              ANTITUSSIVES, MUCOLYTICS &amp; DECONGESTANT</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">24</td>
+          <td style="width:379px">Bromexine HCl Syrup</td>
+          <td style="width:227px">4mg/5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">25</td>
+          <td style="width:379px">Salbutamol Solution</td>
+          <td style="width:227px">2mg/5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">26</td>
+          <td style="width:379px">Salbutamol, Bromhexine &amp; Phenylephrine Syrup</td>
+          <td style="width:227px">4+8+5 mg/10ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">27</td>
+          <td style="width:379px">Dextromethorphan, Chlorpheniramine, Guaiphenesin &amp; Ammonium Chloride Syrup</td>
+          <td style="width:227px">( 5 + 2 + 50+75 mg) /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">28</td>
+          <td style="width:379px">Ambroxol, Terbutaline, Guaiphenesin &amp; Menthol Syrup</td>
+          <td style="width:227px">( 15 + 1.25 + 50 + 2.5 mg) /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:54px; width:75px">29</td>
+          <td style="width:379px">Levosalbutamol, Ambroxol &amp; Guaifenesin Syrup</td>
+          <td style="width:227px">0.5 + 15 + 50 mg</td>
+          <td style="width:221px">60 ml</td>
+        </tr>
+        <tr>
+          <td style="height:53px; width:75px">30</td>
+          <td style="width:379px">Diphenhydramine, Ammonium Chloride, Sodium citrate &amp; Menthol Syrup</td>
+          <td style="width:227px">(14.08 +138 + 57.03+1.14 mg) / 5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">31</td>
+          <td style="width:379px">CODEINE Phoshate, C.P. maleate syrup</td>
+          <td style="width:227px">10 + 4 mg /5ml</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:74px; width:75px">32</td>
+          <td style="width:379px">Chlorpenamine, Phenylephrine, Paracetamol, Sodium Citrate &amp; Menthol Syrup</td>
+          <td style="width:227px">1mg+5mg+125mg+60mg+1mg</td>
+          <td style="width:221px">60 ml</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">33</td>
+          <td style="width:379px">Terbutaline &amp; Bromhexine Syrup</td>
+          <td style="width:227px">2.5mg+8 mg.</td>
+          <td style="width:221px">100 ml</td>
+        </tr>
+        <tr>
+          <td style="height:51px; width:75px">34</td>
+          <td style="width:379px">CP Maleate, Phenylephrine, Paracetamol &amp; Caffeine Tablets</td>
+          <td style="width:227px">(2mg + 5 mg+ 500 mg + 30 mg)</td>
+          <td style="width:221px">4's Tablets Strip / Catch Cover</td>
+        </tr>
+        <tr>
+          <td style="height:80px; width:75px"></td>
+          <td style="width:379px">Paracetamol, Sodium Citrate, Phenylephrine, Chlorphenamine &amp; Levomenthol</td>
+          <td style="width:227px">125+60 + 1+5+1</td>
+          <td style="width:221px">120 ml</td>
+        </tr>
+        <tr>
+          <td style="height:55px; width:75px">35</td>
+          <td style="width:379px">Cyproheptadine &amp; Tricholine citrate Syrup</td>
+          <td style="width:227px">( 2 mg + 275 mg ) / 5ml</td>
+          <td style="width:221px">200 ml - Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-ALLERGICS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">36</td>
+          <td style="width:379px">Cetirizine Tablets</td>
+          <td style="width:227px">10 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">37</td>
+          <td style="width:379px">Promethazine Tablets / Syrup</td>
+          <td style="width:227px">25 mg, &amp; 5mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 100 ml -Syrup -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTI-MALARIALS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:84px; width:75px">38</td>
+          <td style="width:379px">Artemether + Lumefantrin Tablets / Dry Syrup</td>
+          <td style="width:227px">80 mg + 480 mg 20 mg + 120 mg 180 mg+1080 mg /60ml</td>
+          <td style="width:221px">Tablets Tablets Dry syrup</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">39</td>
+          <td style="width:379px">Sulfadoxine and Pyrimethamine Tablets / Suspension</td>
+          <td style="width:227px">500+25 mg. &amp; 250 + 12.5 mg/5ml,</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 10 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">40</td>
+          <td style="width:379px">Artesunate Tablets</td>
+          <td style="width:227px">50 mg / 100 mg</td>
+          <td style="width:221px">6's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">41</td>
+          <td style="width:379px">Tablets Artesunate + Tablets Amodiaquine</td>
+          <td style="width:227px">100 mg + 306.2 mg</td>
+          <td style="width:221px">(3+3) Combipack: 6's Blister</td>
+        </tr>
+        <tr>
+          <td style="height:58px; width:75px">42</td>
+          <td style="width:379px">Amodiaquine Tablets /Suspension</td>
+          <td style="width:227px">200mg, 50 mg/5ml</td>
+          <td style="width:221px">3 Tabs- Blister &amp; 60 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>HYPERACIDITY, ULCERS
+              &amp; ANTACIDS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:76px; width:75px">43</td>
+          <td style="width:379px">Dried Aluminium Hydroxide +Magnesium Hydroxide+Dimeticone - Tablets / Suspension</td>
+          <td style="width:227px">250+250+50 mg, 830+185+50mg/5ml</td>
+          <td style="width:221px">10 Tabs- Blister &amp; 150 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">44</td>
+          <td style="width:379px">Omeprazole &amp; Domperidone Capsules</td>
+          <td style="width:227px">20 mg + 10 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">45</td>
+          <td style="width:379px">Omeprazole Capsules</td>
+          <td style="width:227px">20 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">46</td>
+          <td style="width:379px">Pantoprazole &amp; Domperidone Tablets</td>
+          <td style="width:227px">20 mg+ 10 mg</td>
+          <td style="width:221px">10's strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">47</td>
+          <td style="width:379px">Pantoprazole Tablets</td>
+          <td style="width:227px">40 mg</td>
+          <td style="width:221px">10's strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; width:901px">ENZYMES, DIGESTIVE SUPPLEMENTS</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">48</td>
+          <td style="width:379px">Fungal Diastase &amp; Pepsin Capsules / Syrup</td>
+          <td style="width:227px">50 + 20 mg , 50 mg + 10 mg / 5 ml</td>
+          <td style="width:221px">15 Capsules - strip 200 ml. - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:52px; width:75px">49</td>
+          <td style="width:379px">Fungal Diastase(1:2000) with Carminatives Syrup</td>
+          <td style="width:227px"></td>
+          <td style="width:221px">200ml</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>LAXATIVES</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">50</td>
+          <td style="width:379px">Bisacodyl Tablets BP</td>
+          <td style="width:227px">5 mg</td>
+          <td style="width:221px">10's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTHELMINTICS</strong>
+          </td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">51</td>
+          <td style="width:379px">Albendazole Tablets / Oral Suspension</td>
+          <td style="width:227px">200 mg, 400 mg &amp; 200mg/5ml ,</td>
+          <td style="width:221px">2's &amp; 1's Tablet - Blister 10ml suspn. Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:62px; width:75px">52</td>
+          <td style="width:379px">Mebendazole Tablets / Oral Suspension</td>
+          <td style="width:227px">100 mg &amp; 100mg/5ml</td>
+          <td style="width:221px">6 Tabs- Blister &amp; 30 ml -Supn. -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>VITAMINS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">53</td>
+          <td style="width:379px">Calcium and Vitamin D3 Tablets</td>
+          <td style="width:227px">500 + 250 IU</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">54</td>
+          <td style="width:379px">Cheawable Vitamin C tablets</td>
+          <td style="width:227px">500 mg</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">55</td>
+          <td style="width:379px">Cheawable Vitamin C + Folic Acid Tablets</td>
+          <td style="width:227px">500 mg + 5 mg</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">55</td>
+          <td style="width:379px">Folic Acid Tablets</td>
+          <td style="width:227px">5mg</td>
+          <td style="width:221px">10 tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">56</td>
+          <td style="width:379px">Vitamin B-Complex and Vitamin C Syrup</td>
+          <td style="width:227px">B- Complex with Vit. C</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">57</td>
+          <td style="width:379px">Vitamin B-Complex and Vitamin C with Zinc Capsules</td>
+          <td style="width:227px">Vitamin B-Complex and Vitamin C with Zinc</td>
+          <td style="width:221px">10 Capsules - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:64px; width:75px">58</td>
+          <td style="width:379px">Multivitamin Tablets / Syrup</td>
+          <td style="width:227px">Multivitamins</td>
+          <td style="width:221px">10's Blister 100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>HAEMATINIC /
+              ANTI-OXIDANTS WITH VITAMINS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:78px; width:75px">59</td>
+          <td style="width:379px">Iron(III) Hydroxide Polymaltose Complex &amp; Folic Capsules/Iron(III) Hyd.
+            Polymaltose Complex Syrup</td>
+          <td style="width:227px">100 mg + 500 mcg Iron 100 mg / 5 ml</td>
+          <td style="width:221px">10's caps -' Blister &amp; 30's Caps - Bottle 200 ml Syrup</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">60</td>
+          <td style="width:379px">Ferrous Ascorbate, Folic &amp; Zinc ( as Zinc Sulfate) Tablets</td>
+          <td style="width:227px">(iron 100 mg + Folic 1500 mcg + Zn 22.5 mg )</td>
+          <td style="width:221px">10 tablets - Strip</td>
+        </tr>
+        <tr>
+          <td style="height:55px; width:75px">61</td>
+          <td style="width:379px">Ferrous Ascorbate and Folic Acid Suspension</td>
+          <td style="width:227px">Syr : per 5ml. (iron 100 g + 500 mcg Folic )</td>
+          <td style="width:221px">100ml - Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:70px; width:75px">62</td>
+          <td style="width:379px">Feric Amonium Citrate, Cynocobalamin, Pyridoxine, Niacinamide, Zinc Sulphate Syrup
+          </td>
+          <td style="width:227px">225 mg+7.5 mcg+1.5mg+50 mg+44.4 mg</td>
+          <td style="width:221px">200ml Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:60px; width:75px">63</td>
+          <td style="width:379px">Ferrous Fumarate, Vitamin B12, Folic Acid, Vitamin B6, Docusate Sodium Capsules</td>
+          <td style="width:227px">300mg + 10 mcg+ 1mg + 1.5 mg + 50 mg</td>
+          <td style="width:221px">10 Capsules - strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center"><strong>IMPOTENCE DRUG</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">64</td>
+          <td style="width:379px">Sildenafil Citrate Tablets</td>
+          <td style="width:227px">50 mg &amp; 100 mg.</td>
+          <td style="width:221px">2's &amp; 4's Tablets - Blister</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px"></td>
+          <td colspan="3">NEUTRACEUTICALS</td>
+        </tr>
+        <tr>
+          <td style="height:57px; width:75px">65</td>
+          <td style="width:379px">Zinc Picolinate + Selenium Tablets</td>
+          <td style="width:227px">50 mg + 20 ug</td>
+          <td style="width:221px">10' s Blister 120's -Bottle</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>ANTIBIOTICS -
+              (Cepholosprins )</strong></td>
+        </tr>
+        <tr>
+          <td style="height:80px; width:75px">66</td>
+          <td style="width:379px">CepfodoximeTablets</td>
+          <td style="width:227px">Cepfodoxime proxetile eq. to Cepfodoxime :100 mg. &amp;200 mg.</td>
+          <td style="width:221px">6's Tablets Strip</td>
+        </tr>
+        <tr>
+          <td style="height:65px; width:75px">67</td>
+          <td style="width:379px">Cepfodoxime Dry syrup</td>
+          <td style="width:227px">Cepfodoxime proxetile eq. to Cepfodoxime : 50 mg.</td>
+          <td style="width:221px">30ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">68</td>
+          <td style="width:379px">Cefuroxime Axetil Dry Syrup</td>
+          <td style="width:227px">125mg/5ml</td>
+          <td style="width:221px">100ml- Bottle Dry Sy.</td>
+        </tr>
+        <tr>
+          <td style="height:82px; width:75px">69</td>
+          <td style="width:379px">Cefixime Tablets / Suspension USP</td>
+          <td style="width:227px">100 mg &amp; 200 mg,50 mg / 5ml</td>
+          <td style="width:221px">10' &amp; 6' tablets - Strip 30ml -Dry Sy. -Bottle &amp; 100 ml Dry Sy.- Bottle</td>
+        </tr>
+        <tr>
+          <td style="height:48px; width:75px">70</td>
+          <td style="width:379px">Cefixime + Azithromycin Tablets / Dispersible Tablets</td>
+          <td style="width:227px">200 mg + 250 mg 100mg + 125mg</td>
+          <td style="width:221px">10' s AlU-ALU - Strip 10' s AlU-ALU - Strip</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="height:40px; text-align:center!important; width:901px"><strong>(POWDER )
+              INJECTIONS</strong></td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">71</td>
+          <td style="width:379px">Ceftriaxone for Injection U.S.P.</td>
+          <td style="width:227px">125 / 250 / 500 mg / 1g.</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">72</td>
+          <td style="width:379px">Cefotaxime for Injection U.S.P.</td>
+          <td style="width:227px">125/250/500/1000 mg,</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">73</td>
+          <td style="width:379px">Cefazolin for Injection U.S.P.</td>
+          <td style="width:227px">500mg, 1 g / 2 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">74</td>
+          <td style="width:379px">Ceftazidine for Injection U.S.P.</td>
+          <td style="width:227px">125/250/1000 mg</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">75</td>
+          <td style="width:379px">Cefepime for Injection U.S.P.</td>
+          <td style="width:227px">500mg, 1 g / 2 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+        <tr>
+          <td style="height:40px; width:75px">76</td>
+          <td style="width:379px">Cefoperazone for Injection U.S.P.</td>
+          <td style="width:227px">500 mg, 1 g</td>
+          <td style="width:221px">Powder in Vial</td>
+        </tr>
+      </tbody>
+    </table>
 
     <script>
       function searchTable() {

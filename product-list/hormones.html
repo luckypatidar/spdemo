@@ -7,25 +7,56 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="icon" type="image/png" href="/asset/img/icon.png">
 </head>
+<script type="text/javascript">
 
+  // Function to toggle the menu
+  function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+  }
+
+  function closeMenu(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
+
+    // Now navigate to the href manually
+    const targetHref = event.currentTarget.getAttribute('href');
+    if (targetHref) {
+      window.location.href = targetHref;
+    }
+  }
+
+</script>
 <body>
   <div class="div-nav">
     <div class="div-2-nav">
-      <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
-      <div class="div-3-nav">
-        <div class="div-4-nav"><a href="/index.html">Home</a></div>
-        <div class="div-5-nav"><a href="/index.html#about-us">About Us</a></div>
+      <a href="/index.html">
+        <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Toggle button -->
+      <div id="nav-menu" class="div-3-nav">
+        <div class="div-4-nav"><a href="/">Home</a></div>
+        <div class="div-5-nav"><a href="/#about-us">About Us</a></div>
         <div class="div-6-nav">
           <div class="div-7-nav"><a href="/product.html">Products</a></div>
-         
+          <div class="submenu-nav">
+            <div class="submenu-item"><a href="#" onclick="closeMenu(event)">Home</a></div>
+            <div class="submenu-item"><a href="/#about-us" onclick="closeMenu(event)">About Us</a></div>
+            <div class="submenu-item"><a href="/product.html" onclick="closeMenu(event)">Products</a></div>
+            <div class="submenu-item"><a href="/career.html" onclick="closeMenu(event)">Career</a></div>
+            <div class="submenu-item"><a href="/#contact-us" onclick="closeMenu(event)">Contact</a></div>
+          </div>
         </div>
         <div class="div-8-nav"><a href="/career.html">Career</a></div>
+        <div class="div-9-nav"><a href="/#contact-us">Contact</a></div> <!-- Moved inside -->
       </div>
-      <div class="div-9-nav"><a href="/ndex.html#contact-us">Contact</a></div>
     </div>
   </div>
-
   <style>
+    /* image section  */
     .container-main {
       display: flex;
       width: 100%;
@@ -52,192 +83,260 @@
 
     .image-logo-main {
       position: absolute;
-      /* Allow absolute positioning */
-      top: 50%;
-      /* Center vertically */
+      top: 60%;
       left: 55%;
-      /* Center horizontally */
       transform: translate(-50%, -50%);
-      /* Offset by 50% of its own size */
       padding: 10px;
+      animation: moveUp 1s ease-out forwards;
+    }
+
+    @keyframes moveUp {
+      from {
+        top: 60%;
+        /* Start position */
+      }
+
+      to {
+        top: 50%;
+        /* End position */
+      }
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .container-main {
+        height: 500px;
+        /* Adjust height for mobile */
+      }
+
+      .image-main {
+        object-position: top;
+        /* Adjust object position for mobile */
+      }
+
+      .image-logo-main {
+        top: 70%;
+        /* Adjust the logo position for mobile */
+        width: 80%;
+        /* Reduce the logo size on mobile */
+      }
+
+      @keyframes moveUp {
+        from {
+          top: 70%;
+          /* Adjust the starting position for mobile */
+        }
+
+        to {
+          top: 60%;
+          /* Adjust the end position for mobile */
+        }
+      }
     }
   </style>
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
 
-  body {
-    margin: 0;
-    overflow-x: hidden;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  .div-nav {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    text-transform: uppercase;
-    justify-content: center;
-    padding: 15px 60px;
-    max-width: 100%;
-    overflow: hidden;
-  }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
 
-  @media (max-width: 991px) {
     .div-nav {
-      padding: 0 20px;
-    }
-  }
-
-  .div-2-nav {
-    align-items: center;
-    display: flex;
-    width: 100%;
-    max-width: 1610px;
-    gap: 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  @media (max-width: 991px) {
-    .div-2-nav {
-      max-width: 100%;
-      flex-wrap: wrap;
       align-items: center;
-    }
-  }
-
-  .img-nav {
-    aspect-ratio: 2.5;
-    object-fit: auto;
-    object-position: center;
-    width: 208px;
-    align-self: stretch;
-    max-width: 100%;
-    cursor: pointer;
-  }
-
-  .div-3-nav {
-    align-self: stretch;
-    display: flex;
-    gap: 20px;
-    font-size: 18px;
-    color: #000;
-    font-weight: 400;
-    justify-content: space-between;
-    margin: auto 0;
-    align-items: center;
-  }
-
-  @media (max-width: 991px) {
-    .div-3-nav {
+      background-color: #fff;
+      display: flex;
+      text-transform: uppercase;
+      justify-content: space-between;
+      /* Change justify-content to space-between */
+      padding: 15px 20px;
+      /* Reduced padding for mobile */
       max-width: 100%;
-      flex-wrap: wrap;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .div-2-nav {
       align-items: center;
       display: flex;
-      flex-direction: column;
+      width: 100%;
+      max-width: 1610px;
+      gap: 20px;
+      justify-content: space-between;
+      align-items: center;
     }
-    .div-4-nav{
+
+    .img-nav {
+      aspect-ratio: 2.5;
+      object-fit: contain;
+      object-position: center;
+      width: 150px;
+      /* Adjusted width for mobile */
+      max-width: 100%;
+      cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      /* Initially hidden */
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .div-3-nav {
+      align-self: stretch;
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+      color: #000;
+      font-weight: 400;
+      justify-content: space-between;
+      margin: auto 0;
+      align-items: center;
+    }
+
+    .div-4-nav,
+    .div-5-nav,
+    .div-7-nav,
+    .div-8-nav {
+      font-family: Poppins, sans-serif;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .div-5-nav,
+    .div-6-nav,
+    .div-8-nav {
       margin-left: 50px;
     }
-  }
 
-  .div-4-nav,
-  .div-5-nav,
-  .div-7-nav,
-  .div-8-nav {
-    font-family: Poppins, sans-serif;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .div-5-nav,
-  .div-6-nav,
-  .div-8-nav {
-    margin-left: 50px;
-  }
-
-  .div-4-nav a,
-  .div-5-nav a,
-  .div-7-nav a,
-  .div-8-nav a,
-  .submenu-item a {
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .div-9-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    display: block;
-  }
-
-  .div-6-nav {
-    display: flex;
-    gap: 8px;
-    white-space: nowrap;
-    padding: 7px 0;
-    position: relative;
-  }
-
-  .img-2-nav {
-    object-fit: auto;
-    object-position: center;
-    width: 9px;
-    margin: auto 0;
-    cursor: pointer;
-  }
-
-  .div-9-nav {
-    justify-content: center;
-    border-radius: 10px;
-    background-color: #ec3237;
-    align-self: stretch;
-    color: #fff;
-    margin: auto 0;
-    padding: 13px 22px;
-    font: 500 22px Poppins, sans-serif;
-    cursor: pointer;
-  }
-
-  @media (max-width: 991px) {
-    .div-9-nav {
-      padding: 20px;
+    .div-4-nav a,
+    .div-5-nav a,
+    .div-7-nav a,
+    .div-8-nav a,
+    .submenu-item a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
     }
-  }
 
-  /* Submenu styles */
-  .submenu-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    z-index: 1000;
-    min-width: 150px;
-    /* Ensures the submenu has enough width */
-  }
+    .div-9-nav a {
+      color: #ffffff;
+      text-decoration: none;
+      display: block;
+    }
 
-  .submenu-item {
-    padding: 10px 20px;
-    white-space: nowrap;
-    cursor: pointer;
-    font-family: Poppins, sans-serif;
-  }
+    .div-6-nav {
+      display: flex;
+      gap: 8px;
+      white-space: nowrap;
+      padding: 7px 0;
+      position: relative;
+    }
 
-  .submenu-item:hover {
-    background-color: #f1f1f1;
-  }
+    .img-2-nav {
+      object-fit: auto;
+      object-position: center;
+      width: 9px;
+      margin: auto 0;
+      cursor: pointer;
+    }
 
-  .div-6-nav:hover .submenu-nav {
-    display: block;
-  }
-</style>
+    .div-9-nav {
+      justify-content: center;
+      border-radius: 10px;
+      background-color: #ec3237;
+      align-self: stretch;
+      color: #fff;
+      margin: auto 0;
+      padding: 13px 22px;
+      font: 500 22px Poppins, sans-serif;
+      cursor: pointer;
+    }
+
+    /* Submenu styles */
+    .submenu-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      z-index: 1000;
+      min-width: 150px;
+    }
+
+    .submenu-item {
+      padding: 10px 20px;
+      white-space: nowrap;
+      cursor: pointer;
+      font-family: Poppins, sans-serif;
+    }
+
+    .submenu-item:hover {
+      background-color: #f1f1f1;
+    }
+
+    .div-6-nav:hover .submenu-nav {
+      display: block;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .div-3-nav {
+        display: none;
+        /* Initially hide the menu */
+      }
+
+      .div-3-nav.active {
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: flex-end;
+        position: fixed;
+        background-color: #f5d5d5;
+        top: 4.5em;
+        width: 40%;
+        padding-bottom: 20px;
+        z-index: 20;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        /* Show the menu toggle button on mobile */
+      }
+
+      .div-5-nav,
+      .div-6-nav,
+      .div-8-nav {
+        margin-left: 0;
+        /* Remove left margin for mobile */
+      }
+
+      .div-9-nav {
+        /* width: 100%; Make it full width */
+        text-align: center;
+        align-self: center;
+        padding: 10px 0;
+        /* Adjust padding for spacing */
+        margin-left: 10px;
+        width: 140px;
+      }
+    }
+  </style>
+
 
 
   <div class="div">
@@ -349,9 +448,110 @@
         padding: 5px;
         border: 1px solid #3E4095;
       }
+
+      .table-container { display: none; }
+      @media (max-width: 768px) {
+
+        .tableclass {
+          display: none;
+        }
+        .table-container {
+          overflow-x: auto;
+          /* Enable horizontal scrolling */
+          -webkit-overflow-scrolling: touch;
+          /* Smooth scrolling on iOS */
+          width: 100%;
+          /* Ensure container takes full width */
+          margin: 0 auto;
+          /* Center the container if needed */
+          display: block;
+          /* Ensure block display */
+          padding-top: 20px;
+          margin-left: 10px;
+        }
+
+        table {
+          width: 100%;
+          /* Ensure table takes full width of its container */
+          border-collapse: collapse;
+          font-size: 0.9em;
+          /* Slightly smaller font size for better fit */
+          min-width: 600px;
+          /* Set a minimum width to force horizontal scrolling if needed */
+        }
+
+        th,
+        td {
+          padding: 15px;
+          /* Reduced padding for a more compact view */
+          text-align: left;
+        }
+
+        th {
+          background-color: #F2F3FF;
+        }
+
+        tr:nth-child(even) {
+          background-color: #F2F3FF;
+        }
+
+        tr:hover {
+          background-color: #f1f1f1;
+        }
+
+        .category {
+          text-align: center;
+          font-weight: bold;
+          background-color: #F2F3FF;
+        }
+
+        /* Hover Blur Effect */
+        .blur-hover {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .blur-hover:hover .text-blur {
+          filter: blur(5px);
+          transition: filter 0.3s;
+        }
+
+        .blur-hover:hover .hover-text {
+          opacity: 1;
+        }
+
+        .text-blur {
+          transition: filter 0.3s;
+        }
+
+        .hover-text {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s;
+          background-color: rgba(255, 255, 255, 0.8);
+          padding: 5px;
+          border: 1px solid #3E4095;
+        }
+
+        .blur-hover:hover::after {
+          content: 'View More Details';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 5px 10px;
+          border-radius: 4px;
+          font-weight: bold;
+          color: #3E4095;
+        }
+      }
+
     </style>
 
-    
+<div class="table-container">
 <table border="0" cellpadding="0" cellspacing="0" style="width:83%; display: flexbox;">
 	<tbody>
 		<tr>
@@ -924,7 +1124,580 @@
 		</tr>
 	</tbody>
 </table>
+</div>
 
+<table border="0" class="tableclass" cellpadding="0" cellspacing="0" style="width:83%; display: flexbox;">
+	<tbody>
+		<tr>
+			<td style="height: 20px; width: 51px; text-align: center;font-weight: bold;font-size: 18px;">Sr. No.</td>
+			<td style="width: 272px; text-align: center;font-weight: bold;font-size: 18px;">Generic Name</td>
+			<td style="width: 119px; text-align: center;font-weight: bold;font-size: 18px;">Strength</td>
+			<td style="width: 73px; text-align: center;font-weight: bold;font-size: 18px;">Form</td>
+			<td style="width: 64px; text-align: center;font-weight: bold;font-size: 18px;">Pack</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">1</td>
+			<td style="text-align: center;">Allylestrenol</td>
+			<td style="text-align: center;">5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">2</td>
+			<td style="text-align: center;">Bromocriptine</td>
+			<td style="text-align: center;">2.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">3</td>
+			<td style="text-align: center;">Cabergoline</td>
+			<td style="text-align: center;">0.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">4's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">4</td>
+			<td style="text-align: center;">Chlormadinone Acetate+Ethinyl Estradiol</td>
+			<td style="text-align: center;">2+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">5</td>
+			<td style="text-align: center;">Clomiphene Citrate</td>
+			<td style="text-align: center;">50 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">6</td>
+			<td style="text-align: center;">Conjugated Estrogen</td>
+			<td style="text-align: center;">0.3 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">7</td>
+			<td style="text-align: center;">Conjugated Estrogen</td>
+			<td style="text-align: center;">0.625 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">8</td>
+			<td style="text-align: center;">Conjugated Estrogen</td>
+			<td style="text-align: center;">1.25 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 40px; text-align: center;">9</td>
+			<td style="width: 272px; text-align: center;">Conjugated. Estrogen + Medroxyprogesterone Acetate &amp; 7inert</td>
+			<td style="text-align: center;">0.625+2.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">10</td>
+			<td style="text-align: center;">Cyproterone Acetate + Ethinyl Estradiol</td>
+			<td style="text-align: center;">2+0.035 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">11</td>
+			<td style="text-align: center;">Cyproterone Acetate</td>
+			<td style="text-align: center;">50 /100 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">12</td>
+			<td style="text-align: center;">Danazol</td>
+			<td style="text-align: center;">100 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">13</td>
+			<td style="text-align: center;">Deflazacort</td>
+			<td style="text-align: center;">6 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">6's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">14</td>
+			<td style="text-align: center;">Desogestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.15+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">15</td>
+			<td style="text-align: center;">Desogestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.15+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">16</td>
+			<td style="text-align: center;">Desogestrel</td>
+			<td style="text-align: center;">0.075 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">17</td>
+			<td style="text-align: center;">Dianabol</td>
+			<td style="text-align: center;">10 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">18</td>
+			<td style="text-align: center;">Dienogest + Ethinyl Estradiol</td>
+			<td style="text-align: center;">2+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 120px; text-align: center;">19</td>
+			<td style="width: 272px; text-align: center;">Dienogest + Estradiol Valerate<br>
+			[17 tablets of Dienogest+EV]<br>
+			[5 tablets of Dienogest+EV]<br>
+			[2 tablets of EV]<br>
+			[2 tablets of EV]<br>
+			[2 inert tablets]</td>
+			<td style="width: 119px; text-align: center;"><br>
+			3+2 mg<br>
+			2+2 mg<br>
+			3 mg<br>
+			1 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">20</td>
+			<td style="text-align: center;">Drospirenone + Ethinyl Estradiol</td>
+			<td style="text-align: center;">3+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">21</td>
+			<td style="text-align: center;">Drospirenone + Ethinyl Estradiol &amp; 7 inert</td>
+			<td style="text-align: center;">3+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">22</td>
+			<td style="text-align: center;">Drospirenone + Ethinyl Estradiol &amp; 7 inert</td>
+			<td style="text-align: center;">3+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">23</td>
+			<td style="text-align: center;">Drospirenone + Ethinyl Estradiol &amp; 4 inert</td>
+			<td style="text-align: center;">3+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">24+4's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">24</td>
+			<td style="text-align: center;">Drospirenone + Ethinyl Estradiol &amp; 4 EE</td>
+			<td style="text-align: center;">3+0.02 &amp; 02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">24+4's</td>
+		</tr>
+		<tr>
+			<td style="height: 40px; text-align: center;">25</td>
+			<td style="text-align: center;">Drosperinone + Estradiol</td>
+			<td style="width: 119px; text-align: center;">0.5+1 mg/0.25+0.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 40px; text-align: center;">26</td>
+			<td style="width: 272px; text-align: center;">Drosperinone+ Ethinyl Estradiol+ Calcium Levomefolate / Calcium Levomefolate</td>
+			<td style="width: 119px; text-align: center;">3+0.03+0.451 mg/0.451 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 40px; text-align: center;">27</td>
+			<td style="width: 272px; text-align: center;">Drosperinone+ Ethinyl Estradiol+ Calcium Levomefolate / Calcium Levomefolate</td>
+			<td style="width: 119px; text-align: center;">3+0.02+0.451 mg/0.451 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">28</td>
+			<td style="text-align: center;">Dutasteride</td>
+			<td style="text-align: center;">0.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">29</td>
+			<td style="text-align: center;">Dydrogesterone</td>
+			<td style="text-align: center;">10 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">30</td>
+			<td style="text-align: center;">Estradiol Valerate</td>
+			<td style="text-align: center;">1/2 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 60px; text-align: center;">31</td>
+			<td style="width: 272px; text-align: center;">Estradiol Valerate + Norgestrel<br>
+			[11 tab - Estradiol Valerate]<br>
+			[10 tab - Estradiol Valerate + Norgestrel]</td>
+			<td style="width: 119px; text-align: center;">2 mg<br>
+			2+0.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">32</td>
+			<td style="text-align: center;">Ethinyl Estradiol</td>
+			<td style="text-align: center;">10/50 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">33</td>
+			<td style="text-align: center;">Finasteride</td>
+			<td style="text-align: center;">1/2/5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">34</td>
+			<td style="text-align: center;">Gestodene + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.075+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">35</td>
+			<td style="text-align: center;">Gestodene + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.075+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">36</td>
+			<td style="text-align: center;">Gestodene + Ethinyl Estradiol +4 inert</td>
+			<td style="text-align: center;">0.06+0.015 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">24+4's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">37</td>
+			<td style="text-align: center;">Levonorgestrel</td>
+			<td style="text-align: center;">1.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">1's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">38</td>
+			<td style="text-align: center;">Levonorgestrel</td>
+			<td style="text-align: center;">0.75 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">2's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">39</td>
+			<td style="text-align: center;">Levonorgestrel</td>
+			<td style="text-align: center;">0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">40</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.15+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">41</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol&amp;7 inert</td>
+			<td style="text-align: center;">0.15+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21+7's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">42</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.10+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">43</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol&amp;7 inert</td>
+			<td style="text-align: center;">0.10+0.02 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21+7's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">44</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.125+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">45</td>
+			<td style="text-align: center;">Levonorgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.25+0.05 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 80px; text-align: center;">46</td>
+			<td style="width: 272px; text-align: center;">Levonorgestrel Triphasic<br>
+			[6 tab - Levonorgestrel + Ethinyl Estradiol]<br>
+			[5 tab - Levonorgestrel + Ethinyl Estradiol]<br>
+			[10 tab-Levonorgestrel + Ethinyl Estradiol]</td>
+			<td style="width: 119px; text-align: center;"><br>
+			0.050+0.030 mg<br>
+			0.075+0.040 mg<br>
+			0.125+0.030 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 100px; text-align: center;">47</td>
+			<td style="width: 272px; text-align: center;">Levonorgestrel Triphasic<br>
+			[6 tab - Levonorgestrel + Ethinyl Estradiol]<br>
+			[5 tab - Levonorgestrel + Ethinyl Estradiol]<br>
+			[10 tab-Levonorgestrel + Ethinyl Estradiol]<br>
+			[7 tab - Ferrous Fumerate / inert tablets ]</td>
+			<td style="width: 119px; text-align: center;"><br>
+			0.050+0.030 mg<br>
+			0.075+0.040 mg<br>
+			0.125+0.030 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">48</td>
+			<td style="text-align: center;">Levothyroxine</td>
+			<td style="text-align: center;">25 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">49</td>
+			<td style="text-align: center;">Levothyroxine</td>
+			<td style="text-align: center;">50 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">50</td>
+			<td style="text-align: center;">Levothyroxine</td>
+			<td style="text-align: center;">100 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">51</td>
+			<td style="text-align: center;">Levothyroxine</td>
+			<td style="text-align: center;">150 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">52</td>
+			<td style="text-align: center;">Levothyroxine</td>
+			<td style="text-align: center;">200 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">53</td>
+			<td style="text-align: center;">Lynestrenol</td>
+			<td style="text-align: center;">0.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">54</td>
+			<td style="text-align: center;">Lynestrenol + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.75+0.0375 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">55</td>
+			<td style="text-align: center;">Medroxyprogesterone Acetate</td>
+			<td style="text-align: center;">2.5/5/10/100 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">56</td>
+			<td style="text-align: center;">Mifepristone</td>
+			<td style="text-align: center;">200 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">1's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">57</td>
+			<td style="text-align: center;">Misoprostol</td>
+			<td style="text-align: center;">200 mcg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">4's</td>
+		</tr>
+		<tr>
+			<td style="height: 60px; text-align: center;">58</td>
+			<td style="width: 272px; text-align: center;">Mifepristone + Misoprostol<br>
+			[1 tablet of Mifepristone]<br>
+			[4 tablets of Misoprostol]</td>
+			<td style="width: 119px; text-align: center;"><br>
+			200 mg<br>
+			200 mcg</td>
+			<td style="text-align: center;">Kit</td>
+			<td style="text-align: center;">5's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">59</td>
+			<td style="text-align: center;">Norgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.50+0.05 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">60</td>
+			<td style="text-align: center;">Norgestrel + Ethinyl Estradiol &amp; 7 inert</td>
+			<td style="text-align: center;">0.50+0.05 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">61</td>
+			<td style="text-align: center;">Norgestrel + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.30+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">62</td>
+			<td style="text-align: center;">Norgestrel + Ethinyl Estradiol &amp; 7 inert</td>
+			<td style="text-align: center;">0.30+0.03 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">63</td>
+			<td style="text-align: center;">Norgestrel</td>
+			<td style="text-align: center;">0.075 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">64</td>
+			<td style="text-align: center;">Norethisterone</td>
+			<td style="text-align: center;">5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">65</td>
+			<td style="text-align: center;">Norethisterone</td>
+			<td style="text-align: center;">0.35 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">66</td>
+			<td style="text-align: center;">Norethisterone Acetate</td>
+			<td style="text-align: center;">5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">67</td>
+			<td style="text-align: center;">Norethisterone+Ethinyl Estradiol &amp; 7 inert</td>
+			<td style="text-align: center;">0.4+0.035 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">68</td>
+			<td style="text-align: center;">Norgestimate + Ethinyl Estradiol</td>
+			<td style="text-align: center;">0.25+0.035 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">21's</td>
+		</tr>
+		<tr>
+			<td style="height: 40px; text-align: center;">69</td>
+			<td style="text-align: center;">Norgestimate + Ethinyl Estradiol</td>
+			<td style="width: 119px; text-align: center;">0.18/0.215/0.25+0.035 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">70</td>
+			<td style="text-align: center;">Prednisolone Acetate</td>
+			<td style="text-align: center;">5/10/20 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">71</td>
+			<td style="text-align: center;">Progesterone</td>
+			<td style="text-align: center;">100 / 200 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">72</td>
+			<td style="text-align: center;">Stanozolol</td>
+			<td style="text-align: center;">2/10/50 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">73</td>
+			<td style="text-align: center;">Stilboestrol</td>
+			<td style="text-align: center;">5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">74</td>
+			<td style="text-align: center;">Testosterone Undecanoate</td>
+			<td style="text-align: center;">40 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">10's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">75</td>
+			<td style="text-align: center;">Tibolone</td>
+			<td style="text-align: center;">2.5 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">28's</td>
+		</tr>
+		<tr>
+			<td style="height: 30px; text-align: center;">76</td>
+			<td style="text-align: center;">Ulipristal Acetate</td>
+			<td style="text-align: center;">30 mg</td>
+			<td style="text-align: center;">Tablets</td>
+			<td style="text-align: center;">1's</td>
+		</tr>
+	</tbody>
+</table>
     <script>
       function searchTable() {
         const input = document.getElementById('searchInput');

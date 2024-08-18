@@ -7,6 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="/asset/img/icon.png">
 </head>
+<script type="text/javascript">
+
+  // Function to toggle the menu
+  function toggleMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
+  }
+
+  function closeMenu(event) {
+    event.preventDefault(); // Prevent the default anchor behavior
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+    }
+
+    // Now navigate to the href manually
+    const targetHref = event.currentTarget.getAttribute('href');
+    if (targetHref) {
+      window.location.href = targetHref;
+    }
+  }
+
+</script>
 <style>
   .tab.selected {
     color: #ec3237;
@@ -33,24 +56,109 @@
 <body>
   <div class="div-nav">
     <div class="div-2-nav">
-      <img loading="lazy"
-        srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ffce1c2da37b1f97e614f299a86a3f6bc029dd0b00cec1678561e14ab2de1777?apiKey=38bd2698e0e84fa6b8fdaf8526e9946f&"
-        class="img-nav" />
-      <div class="div-3-nav">
-        <div class="div-4-nav"><a href="/index.html">Home</a></div>
-        <div class="div-5-nav"><a href="/index.html#about-us">About Us</a></div>
+      <a href="/index.html">
+        <img loading="lazy" src="/asset/img/nav-logo.png" class="img-nav" />
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Toggle button -->
+      <div id="nav-menu" class="div-3-nav">
+        <div class="div-4-nav"><a href="/">Home</a></div>
+        <div class="div-5-nav"><a href="/#about-us">About Us</a></div>
         <div class="div-6-nav">
-          <div class="div-7-nav"><a style="color: #333;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;" href="/product.html">Products</a></div>
-
+          <div class="div-7-nav"><a href="/product.html">Products</a></div>
+          <div class="submenu-nav">
+            <div class="submenu-item"><a href="#" onclick="closeMenu(event)">Home</a></div>
+            <div class="submenu-item"><a href="/#about-us" onclick="closeMenu(event)">About Us</a></div>
+            <div class="submenu-item"><a href="/product.html" onclick="closeMenu(event)">Products</a></div>
+            <div class="submenu-item"><a href="/career.html" onclick="closeMenu(event)">Career</a></div>
+            <div class="submenu-item"><a href="/#contact-us" onclick="closeMenu(event)">Contact</a></div>
+          </div>
         </div>
         <div class="div-8-nav"><a href="/career.html">Career</a></div>
+        <div class="div-9-nav"><a href="/#contact-us">Contact</a></div> <!-- Moved inside -->
       </div>
-      <div class="div-9-nav"><a href="/index.html#contact-us">Contact</a></div>
     </div>
   </div>
+  <style>
+    /* image section  */
+    .container-main {
+      display: flex;
+      width: 100%;
+      height: 950px;
+    }
+
+    .image-container-main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* This aligns the content to the center */
+    }
+
+    .image-main {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .image-logo-main {
+      position: absolute;
+      top: 60%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      animation: moveUp 1s ease-out forwards;
+    }
+
+    @keyframes moveUp {
+      from {
+        top: 60%;
+        /* Start position */
+      }
+
+      to {
+        top: 50%;
+        /* End position */
+      }
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .container-main {
+        height: 500px;
+        /* Adjust height for mobile */
+      }
+
+      .image-main {
+        object-position: top;
+        /* Adjust object position for mobile */
+      }
+
+      .image-logo-main {
+        top: 70%;
+        /* Adjust the logo position for mobile */
+        width: 80%;
+        /* Reduce the logo size on mobile */
+      }
+
+      @keyframes moveUp {
+        from {
+          top: 70%;
+          /* Adjust the starting position for mobile */
+        }
+
+        to {
+          top: 60%;
+          /* Adjust the end position for mobile */
+        }
+      }
+    }
+  </style>
+
+
   <style>
     * {
       box-sizing: border-box;
@@ -66,16 +174,13 @@
       background-color: #fff;
       display: flex;
       text-transform: uppercase;
-      justify-content: center;
-      padding: 15px 60px;
+      justify-content: space-between;
+      /* Change justify-content to space-between */
+      padding: 15px 20px;
+      /* Reduced padding for mobile */
       max-width: 100%;
       overflow: hidden;
-    }
-
-    @media (max-width: 991px) {
-      .div-nav {
-        padding: 0 20px;
-      }
+      position: relative;
     }
 
     .div-2-nav {
@@ -88,22 +193,22 @@
       align-items: center;
     }
 
-    @media (max-width: 991px) {
-      .div-2-nav {
-        max-width: 100%;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-    }
-
     .img-nav {
       aspect-ratio: 2.5;
-      object-fit: auto;
+      object-fit: contain;
       object-position: center;
-      width: 208px;
-      align-self: stretch;
+      width: 150px;
+      /* Adjusted width for mobile */
       max-width: 100%;
       cursor: pointer;
+    }
+
+    .menu-toggle {
+      display: none;
+      /* Initially hidden */
+      font-size: 24px;
+      cursor: pointer;
+      padding: 10px;
     }
 
     .div-3-nav {
@@ -116,19 +221,6 @@
       justify-content: space-between;
       margin: auto 0;
       align-items: center;
-    }
-
-    @media (max-width: 991px) {
-      .div-3-nav {
-        max-width: 100%;
-        flex-wrap: wrap;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-      }
-      .div-4-nav{
-        margin-left: 50px;
-      }
     }
 
     .div-4-nav,
@@ -191,12 +283,6 @@
       cursor: pointer;
     }
 
-    @media (max-width: 991px) {
-      .div-9-nav {
-        padding: 20px;
-      }
-    }
-
     /* Submenu styles */
     .submenu-nav {
       display: none;
@@ -208,7 +294,6 @@
       border-radius: 4px;
       z-index: 1000;
       min-width: 150px;
-      /* Ensures the submenu has enough width */
     }
 
     .submenu-item {
@@ -224,6 +309,54 @@
 
     .div-6-nav:hover .submenu-nav {
       display: block;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+      .div-3-nav {
+        display: none;
+        /* Initially hide the menu */
+      }
+
+      .div-3-nav.active {
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: flex-end;
+        position: fixed;
+        background-color: #f5d5d5;
+        top: 4.5em;
+        width: 40%;
+        padding-bottom: 20px;
+        z-index: 20;
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+      }
+
+      .menu-toggle {
+        display: block;
+        /* Show the menu toggle button on mobile */
+      }
+
+      .div-5-nav,
+      .div-6-nav,
+      .div-8-nav {
+        margin-left: 0;
+        /* Remove left margin for mobile */
+      }
+
+      .div-9-nav {
+        /* width: 100%; Make it full width */
+        text-align: center;
+        align-self: center;
+        padding: 10px 0;
+        /* Adjust padding for spacing */
+        margin-left: 10px;
+        width: 140px;
+      }
     }
   </style>
 
@@ -1240,6 +1373,7 @@
     @media (max-width: 991px) {
       .img-8 {
         margin-top: 40px;
+        height: 100px;
       }
     }
 
@@ -1264,6 +1398,7 @@
     @media (max-width: 991px) {
       .img-9 {
         margin-top: 40px;
+        height: 100px;
       }
     }
 
@@ -1288,6 +1423,7 @@
     @media (max-width: 991px) {
       .img-10 {
         margin-top: 40px;
+        height: 100px;
       }
     }
 
@@ -1312,6 +1448,7 @@
     @media (max-width: 991px) {
       .img-11 {
         margin-top: 40px;
+        height: 100px;
       }
     }
 
