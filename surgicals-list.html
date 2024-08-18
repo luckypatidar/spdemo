@@ -146,15 +146,12 @@
         background-color: #fff;
         display: flex;
         text-transform: uppercase;
-        justify-content: space-between;
-        /* Change justify-content to space-between */
-        padding: 15px 20px;
-        /* Reduced padding for mobile */
+        justify-content: center;
+        padding: 15px 60px;
         max-width: 100%;
         overflow: hidden;
-        position: relative;
       }
-  
+
       .div-2-nav {
         align-items: center;
         display: flex;
@@ -164,17 +161,17 @@
         justify-content: space-between;
         align-items: center;
       }
-  
+
       .img-nav {
-  aspect-ratio: 2.5;
-  object-fit: contain;
-  object-position: center;
-  width: 208px;
-  align-self: stretch;
-  max-width: 100%;
-  cursor: pointer;
-}
-  
+        aspect-ratio: 2.5;
+        object-fit: contain;
+        object-position: center;
+        width: 208px;
+        align-self: stretch;
+        max-width: 100%;
+        cursor: pointer;
+      }
+
       .menu-toggle {
         display: none;
         /* Initially hidden */
@@ -182,11 +179,11 @@
         cursor: pointer;
         padding: 10px;
       }
-  
+
       .div-3-nav {
         align-self: stretch;
         display: flex;
-        gap: 20px;
+        gap: 40px;
         font-size: 18px;
         color: #000;
         font-weight: 400;
@@ -194,7 +191,7 @@
         margin: auto 0;
         align-items: center;
       }
-  
+
       .div-4-nav,
       .div-5-nav,
       .div-7-nav,
@@ -203,13 +200,13 @@
         white-space: nowrap;
         cursor: pointer;
       }
-  
+
       .div-5-nav,
       .div-6-nav,
       .div-8-nav {
         margin-left: 50px;
       }
-  
+
       .div-4-nav a,
       .div-5-nav a,
       .div-7-nav a,
@@ -220,13 +217,13 @@
         text-decoration: none;
         display: block;
       }
-  
+
       .div-9-nav a {
         color: #ffffff;
         text-decoration: none;
         display: block;
       }
-  
+
       .div-6-nav {
         display: flex;
         gap: 8px;
@@ -234,7 +231,7 @@
         padding: 7px 0;
         position: relative;
       }
-  
+
       .img-2-nav {
         object-fit: auto;
         object-position: center;
@@ -242,7 +239,7 @@
         margin: auto 0;
         cursor: pointer;
       }
-  
+
       .div-9-nav {
         justify-content: center;
         border-radius: 10px;
@@ -254,7 +251,7 @@
         font: 500 22px Poppins, sans-serif;
         cursor: pointer;
       }
-  
+
       /* Submenu styles */
       .submenu-nav {
         display: none;
@@ -267,29 +264,29 @@
         z-index: 1000;
         min-width: 150px;
       }
-  
+
       .submenu-item {
         padding: 10px 20px;
         white-space: nowrap;
         cursor: pointer;
         font-family: Poppins, sans-serif;
       }
-  
+
       .submenu-item:hover {
         background-color: #f1f1f1;
       }
-  
+
       .div-6-nav:hover .submenu-nav {
         display: block;
       }
-  
+
       /* Mobile responsive styles */
       @media (max-width: 768px) {
         .div-3-nav {
           display: none;
           /* Initially hide the menu */
         }
-  
+
         .div-3-nav.active {
           transition: 0.3s;
           display: flex;
@@ -299,27 +296,29 @@
           justify-content: flex-end;
           position: fixed;
           background-color: #f5d5d5;
-          top: 4.5em;
+          top: 5em;
+          left: 2em;
           width: 80%;
+          align-self: center;
           padding-bottom: 20px;
           z-index: 20;
           border-top-left-radius: 2rem;
           border-bottom-left-radius: 2rem;
           border-bottom-right-radius: 2rem;
         }
-  
+
         .menu-toggle {
           display: block;
           /* Show the menu toggle button on mobile */
         }
-  
+
         .div-5-nav,
         .div-6-nav,
         .div-8-nav {
           margin-left: 0;
           /* Remove left margin for mobile */
         }
-  
+
         .div-9-nav {
           /* width: 100%; Make it full width */
           text-align: center;

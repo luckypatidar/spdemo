@@ -163,7 +163,7 @@ body {
     background-color: #f5d5d5;
     top: 5em;
     left: 2em;
-    width: 40%;
+    width: 80%;
     align-self: center;
     padding-bottom: 20px;
     z-index: 20;
@@ -308,7 +308,7 @@ body {
 
 .columnab,
 .column-mp,
-.column-15 {
+.column-15,column-15-sp {
   transform: translateX(-100%);
 }
 
@@ -346,7 +346,7 @@ body {
 .column-2ab,
 .column-mp,
 .column-2-mp,
-.column-15,
+.column-15, column-15-sp,
 .column-16 {
   display: flex;
   flex-direction: column;
@@ -486,6 +486,7 @@ body {
 .column-mp.animate,
 .column-2-mp.animate,
 .column-15.animate,
+.column-15-sp.animate,
 .column-16.animate {
   transform: translateX(0);
   opacity: 1;
@@ -610,7 +611,7 @@ body {
     padding: 20px;
   }
   .address-container {
-    margin-top: 250px;
+    margin-top: 280px;
     text-align: center;
     padding: 20px;
   }
@@ -1177,7 +1178,7 @@ body {
   display: flex;
 }
 
-.column-15 {
+.column-15, column-15-sp {
   display: flex;
   flex-direction: column;
   line-height: normal;
@@ -1245,6 +1246,10 @@ body {
   text-align: justify;
 }
 
+.column-15-sp {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .div-45 {
     margin-top: 15em; /* Reduce top margin for mobile */
@@ -1255,11 +1260,23 @@ body {
     gap: 20px;
   }
 
+  /* .div-47 {
+    display: none;
+  } */
+
   .column-15,
   .column-16 {
     width: 100%;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .column-15 {
+    display: none;
+  }
+
+  .column-15-sp {
+    display: block;
   }
 
   .div-47 {
@@ -1283,6 +1300,7 @@ body {
   .div-48 {
     padding: 20px 15px; /* Adjust padding for mobile */
     text-align: center; /* Center the text for better alignment on mobile */
+    margin-top: -10em;
   }
 
   .div-49 {
@@ -1301,9 +1319,9 @@ body {
   color: #3e4095;
   text-transform: capitalize;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 60px;
   font: 700 64px/156% Outfit, sans-serif;
-  margin-left: 150px;
+  /* margin-left: 150px; */
   text-align: center;
 }
 
@@ -2168,7 +2186,7 @@ body {
   width: 24px;
   fill: #ec3237;
   position: relative;
-  top: 1.3em;
+  top: 1em;
 }
 
 .div-5-cu,
@@ -2176,6 +2194,10 @@ body {
 .div-7-cu {
   font-family: Poppins, sans-serif;
   margin-top: 25px;
+}
+
+.div-18-cu {
+  font-family: Poppins, sans-serif;
 }
 
 .div-8-cu {
@@ -2451,4 +2473,11 @@ body {
   background-color: #ddd;
   height: auto;
   margin: 0 40px;
+}
+
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }
