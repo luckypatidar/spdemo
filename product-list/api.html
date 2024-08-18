@@ -39,20 +39,13 @@
       </a>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div> <!-- Toggle button -->
       <div id="nav-menu" class="div-3-nav">
-        <div class="div-4-nav"><a href="/">Home</a></div>
-        <div class="div-5-nav"><a href="/#about-us">About Us</a></div>
+        <div class="div-4-nav"><a href="/" onclick="closeMenu(event)">Home</a></div>
+        <div class="div-5-nav"><a href="/#about-us" onclick="closeMenu(event)">About Us</a></div>
         <div class="div-6-nav">
-          <div class="div-7-nav"><a href="/product.html">Products</a></div>
-          <div class="submenu-nav">
-            <div class="submenu-item"><a href="#" onclick="closeMenu(event)">Home</a></div>
-            <div class="submenu-item"><a href="/#about-us" onclick="closeMenu(event)">About Us</a></div>
-            <div class="submenu-item"><a href="/product.html" onclick="closeMenu(event)">Products</a></div>
-            <div class="submenu-item"><a href="/career.html" onclick="closeMenu(event)">Career</a></div>
-            <div class="submenu-item"><a href="/#contact-us" onclick="closeMenu(event)">Contact</a></div>
-          </div>
+          <div class="div-7-nav"><a href="/product.html" onclick="closeMenu(event)">Products</a></div>
         </div>
-        <div class="div-8-nav"><a href="/career.html">Career</a></div>
-        <div class="div-9-nav"><a href="/#contact-us">Contact</a></div> <!-- Moved inside -->
+        <div class="div-8-nav"><a href="/career.html" onclick="closeMenu(event)">Career</a></div>
+        <div class="div-9-nav"><a href="/#contact-us" onclick="closeMenu(event)">Contact</a></div> <!-- Moved inside -->
       </div>
     </div>
   </div>
