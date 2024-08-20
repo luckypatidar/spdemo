@@ -184,6 +184,7 @@ body {
   .div-6-nav,
   .div-8-nav {
     margin-left: 0; /* Remove left margin for mobile */
+    margin-right: 0;
   }
 
   .div-9-nav {
